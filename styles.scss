@@ -1,10 +1,18 @@
 ---
 ---
-
 body {
+  background-color: #fefefe;
+  color: #111;
+  display: flex;
   font-family: system-ui;
+  justify-content: flex-end;
   line-height: 1.5;
+  max-width: 38rem;
   padding: 1rem;
+}
+
+h1, h2 {
+  font-weight: 600;
 }
 
 img {
@@ -12,5 +20,5 @@ img {
 }
 
 .container {
-  max-width: 33rem;
+  width: 33rem;
 }
