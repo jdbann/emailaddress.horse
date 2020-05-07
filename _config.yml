@@ -13,3 +13,10 @@ defaults:
 
 exclude:
   - README.md
+
+plugins:
+  - jekyll-feed
+
+title: emailaddress.horse
+description: John Bannister's personal website.
+author: John Bannister
