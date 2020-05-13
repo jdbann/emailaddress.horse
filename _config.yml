@@ -16,6 +16,7 @@ exclude:
 
 plugins:
   - jekyll-feed
+  - jekyll-gist
 
 title: emailaddress.horse
 description: John Bannister's personal website.

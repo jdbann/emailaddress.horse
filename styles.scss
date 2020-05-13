@@ -51,5 +51,5 @@ hr {
 .container {
   display: flex;
   flex-direction: column;
-  width: 33rem;
+  width: min(33rem, 100vw - 4rem);
 }
