@@ -1,0 +1,8 @@
+<h2 id="{{ include.name | slugify }}">{{ include.name }}</h2>
+<ul>
+  {% for post in include.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
