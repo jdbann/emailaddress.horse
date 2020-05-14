@@ -1,5 +1,6 @@
 ---
 title: "Action Cable and Stimulus"
+categories: ["web development"]
 ---
 
 I'm a big fan of [Action Cable] and [Stimulus]. They work really nicely

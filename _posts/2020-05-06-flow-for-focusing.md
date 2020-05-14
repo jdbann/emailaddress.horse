@@ -1,5 +1,6 @@
 ---
 title: "Flow for focusing"
+categories: ["my setup"]
 ---
 
 I've been getting a lot of value out of [Flow], a free [pomodoro] app. It's a

@@ -1,5 +1,6 @@
 ---
 title: "Dungeons & Dragons"
+categories: ["d&d"]
 ---
 
 I love [Dungeons & Dragons].

@@ -21,3 +21,4 @@ plugins:
 title: emailaddress.horse
 description: John Bannister's personal website.
 author: John Bannister
+permalink: /:year/:month/:day/:title:output_ext

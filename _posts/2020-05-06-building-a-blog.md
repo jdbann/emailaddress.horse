@@ -1,5 +1,6 @@
 ---
 title: "Building a blog"
+categories: ["web development"]
 ---
 
 Regular readers might recognise a complete rebuild of this place. It's maybe

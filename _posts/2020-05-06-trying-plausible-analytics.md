@@ -1,5 +1,6 @@
 ---
 title: "Trying Plausible.io for analytics"
+categories: ["my setup"]
 ---
 
 I've signed up for a trial of [Plausible.io] and installed the snippet here.
