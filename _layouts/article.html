@@ -10,6 +10,10 @@ layout: default
       <a href="/categories#{{ category | slugify }}">{{ category }}</a>
     {% endfor %}
   {% endif %}
+  {% if page.source != nil %}
+    |
+    <a href="{{ page.source }}">Original source</a>
+  {% endif %}
 </small>
 
 {{ content }}
