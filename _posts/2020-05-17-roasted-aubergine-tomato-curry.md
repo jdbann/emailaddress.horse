@@ -1,7 +1,9 @@
 ---
-title: "Roasted aubergine & tomato curry"
-categories: ["recipes"]
-source: "https://www.bbcgoodfood.com/recipes/roasted-aubergine-tomato-curry"
+title: Roasted aubergine & tomato curry
+date: 2020-05-17 00:00:00 Z
+categories:
+- recipes
+source: https://www.bbcgoodfood.com/recipes/roasted-aubergine-tomato-curry
 ---
 
 _I'd like to share recipes I've enjoyed here. Mostly because I don't have a

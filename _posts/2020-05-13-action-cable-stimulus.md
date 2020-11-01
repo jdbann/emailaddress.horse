@@ -1,6 +1,8 @@
 ---
-title: "Action Cable and Stimulus"
-categories: ["web development"]
+title: Action Cable and Stimulus
+date: 2020-05-13 00:00:00 Z
+categories:
+- web development
 ---
 
 I'm a big fan of [Action Cable] and [Stimulus]. They work really nicely

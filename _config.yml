@@ -1,24 +1,28 @@
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "page"
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "article"
-
-exclude:
-  - README.md
-
-plugins:
-  - jekyll-feed
-  - jekyll-gist
-
+---
 title: emailaddress.horse
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: article
+exclude:
+- README.md
+plugins:
+- jekyll-feed
+- jekyll-gist
 description: John Bannister's personal website.
 author: John Bannister
-permalink: /:year/:month/:day/:title:output_ext
+permalink: "/:year/:month/:day/:title:output_ext"

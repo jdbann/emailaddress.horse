@@ -1,6 +1,8 @@
 ---
-title: "Editing multiple lines in vim"
-categories: ["tips"]
+title: Editing multiple lines in vim
+date: 2020-05-17 00:00:00 Z
+categories:
+- tips
 ---
 
 Formatting a list recently, I finally looked up how to insert text in multiple

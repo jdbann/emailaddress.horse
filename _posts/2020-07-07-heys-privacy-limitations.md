@@ -1,5 +1,6 @@
 ---
 title: HEY’s privacy limitations
+date: 2020-07-07 00:00:00 Z
 ---
 
 I didn't subscribe to [HEY] because of its [privacy features][hey-spy-trackers]. I don't think it was anyone's primary reason. I think the [Basecamp] team did a great job of promoting privacy to people who weren't already engaged in the fight for privacy. I am worried that it gives a false sense of security though.

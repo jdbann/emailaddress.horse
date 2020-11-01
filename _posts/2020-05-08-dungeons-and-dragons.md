@@ -1,6 +1,8 @@
 ---
-title: "Dungeons & Dragons"
-categories: ["d&d"]
+title: Dungeons & Dragons
+date: 2020-05-08 00:00:00 Z
+categories:
+- d&d
 ---
 
 I love [Dungeons & Dragons].

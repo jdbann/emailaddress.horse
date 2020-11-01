@@ -1,6 +1,8 @@
 ---
-title: "Flow for focusing"
-categories: ["my setup"]
+title: Flow for focusing
+date: 2020-05-06 00:00:00 Z
+categories:
+- my setup
 ---
 
 I've been getting a lot of value out of [Flow], a free [pomodoro] app. It's a

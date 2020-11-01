@@ -1,5 +1,6 @@
 ---
 title: How to get around HEY.com’s email tracking restrictions
+date: 2020-06-15 00:00:00 Z
 ---
 
 Don’t.

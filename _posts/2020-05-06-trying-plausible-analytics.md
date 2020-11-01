@@ -1,6 +1,8 @@
 ---
-title: "Trying Plausible.io for analytics"
-categories: ["my setup"]
+title: Trying Plausible.io for analytics
+date: 2020-05-06 00:00:00 Z
+categories:
+- my setup
 ---
 
 I've signed up for a trial of [Plausible.io] and installed the snippet here.

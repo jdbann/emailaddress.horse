@@ -1,6 +1,8 @@
 ---
-title: "Building a blog"
-categories: ["web development"]
+title: Building a blog
+date: 2020-05-06 00:00:00 Z
+categories:
+- web development
 ---
 
 Regular readers might recognise a complete rebuild of this place. It's maybe
