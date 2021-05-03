@@ -18,6 +18,8 @@
         data-domain="emailaddress.horse"
         src="https://stats.emailaddress.horse/js/index.js"
       ></script>
+      <script
+        src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
   </head>
   <body>
@@ -35,5 +37,18 @@
         <a href="https://twitter.com/jdbannister">@jdbannister</a>
       </footer>
     </div>
+    {% if jekyll.environment == "production" %}
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+    {% endif %}
   </body>
 </html>
