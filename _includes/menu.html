@@ -1,0 +1,7 @@
+{% for item in site.menus[include.menu] %}
+  {% if page.url == item.url %}
+    <span>{{ item.title }}</span>
+  {% else %}
+    <a href="{{ item.url }}">{{ item.title }}</a>
+  {% endif %}
+{% endfor %}

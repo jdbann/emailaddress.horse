@@ -1,6 +1,10 @@
-<h2 id="{{ include.name | slugify }}">{{ include.name }}</h2>
+---
+title: Posts
+menus: header
+---
+
 <ul>
-  {% for post in include.posts %}
+  {% for post in site.posts %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>

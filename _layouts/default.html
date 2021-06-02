@@ -18,13 +18,9 @@
   <body>
     <div class="container">
       <header>
-        <a href="{{ site.url | relative_url }}">emailaddress.horse</a>
-
         <div class="cluster">
           <div>
-            {% for item in site.menus.header %}
-            <a href="{{ item.url }}">{{ item.title }}</a>
-            {% endfor %}
+            {% include menu.html menu="header" %}
           </div>
         </div>
       </header>
@@ -38,9 +34,7 @@
 
         <div class="cluster">
           <div>
-            {% for item in site.menus.footer %}
-            <a href="{{ item.url }}">{{ item.title }}</a>
-            {% endfor %}
+            {% include menu.html menu="footer" %}
           </div>
         </div>
       </footer>

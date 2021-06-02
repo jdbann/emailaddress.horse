@@ -1,6 +1,7 @@
 ---
 title: emailaddress.horse
 timezone: UTC
+url: https://emailaddress.horse
 collections:
   posts:
     title: Posts

@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "compositions";
+
 $black: #262626;
 $blue: #0f5786;
 $red: #cd2312;
@@ -59,5 +61,5 @@ hr {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 33rem;
+  width: 56ch;
 }
