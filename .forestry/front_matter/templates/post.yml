@@ -4,7 +4,15 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
+  config:
+    required: true
 - type: datetime
   name: date
-  label: date
+  label: Date
+  config:
+    date_format: DD/MM/YYYY
+    time_format: ''
+    display_utc: true
+    required: true
+  default: now
