@@ -1,3 +1,9 @@
+.cluster { --space: 1rem; overflow: hidden; }
+
+.cluster > * { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; margin: calc(var(--space) / 2 * -1); }
+
+.cluster > * > * { margin: calc(var(--space) / 2); }
+
 * { box-sizing: border-box; }
 
 body { background-color: #fefcfb; color: #262626; display: flex; font-family: system-ui; justify-content: flex-end; line-height: 1.5; margin: 0; max-width: 45rem; min-height: 100vh; padding: 2rem; }
@@ -16,6 +22,6 @@ code { background-color: #cee8f9; border-radius: .25rem; padding-left: .25rem; p
 
 hr { border: none; border-top: 1px solid #a0d3f4; }
 
-.container { display: flex; flex-direction: column; max-width: 33rem; }
+.container { display: flex; flex-direction: column; width: 56ch; }
 
 /*# sourceMappingURL=styles.css.map */
