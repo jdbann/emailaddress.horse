@@ -1,0 +1,14 @@
+---
+title: Börk Clorb
+menus:
+  header:
+    weight: 3
+---
+
+I'm setting up a book club for indie RPGs. It's called Börk Clorb as a reference
+to [Mörk Borg], the game that brought a lot of us together in the first place.
+
+For a more detailed description, take a look at
+[this](https://www.craft.do/s/dzqBoVYv5ULf4D).
+
+[Mörk Borg]: https://morkborg.com
