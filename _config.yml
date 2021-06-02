@@ -18,6 +18,7 @@ defaults:
 plugins:
 - jekyll-feed
 - jekyll-gist
+- jekyll-menus
 description: John Bannister's personal website.
 author: John Bannister
 permalink: "/:collection/:title"

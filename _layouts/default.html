@@ -19,6 +19,14 @@
     <div class="container">
       <header>
         <a href="{{ site.url | relative_url }}">emailaddress.horse</a>
+
+        <div class="cluster">
+          <div>
+            {% for item in site.menus.header %}
+            <a href="{{ item.url }}">{{ item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
       </header>
 
       <main>
@@ -27,7 +35,14 @@
 
       <footer>
         <hr/>
-        <a href="https://twitter.com/jdbannister">@jdbannister</a>
+
+        <div class="cluster">
+          <div>
+            {% for item in site.menus.footer %}
+            <a href="{{ item.url }}">{{ item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
       </footer>
     </div>
   </body>
