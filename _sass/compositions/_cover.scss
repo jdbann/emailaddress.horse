@@ -1,0 +1,25 @@
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.cover > * {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cover > :first-child:not(main) {
+  margin-top: 0;
+}
+
+.cover > :last-child:not(main) {
+  margin-bottom: 0;
+}
+
+.cover > main {
+  margin-top: auto;
+  margin-bottom: auto;
+  flex: 1;
+}

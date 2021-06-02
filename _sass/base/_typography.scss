@@ -1,0 +1,12 @@
+* {
+  line-height: 1.5;
+}
+
+a, a:visited {
+  color: var(--color-primary);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-primary);
+}
