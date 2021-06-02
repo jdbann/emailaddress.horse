@@ -1,27 +1,92 @@
+/* Box sizing rules */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Remove default margin */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin: 0; }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"], ol[role="list"] { list-style: none; }
+
+/* Set core root defaults */
+html:focus-within { scroll-behavior: smooth; }
+
+/* Set core body defaults */
+body { min-height: 100vh; text-rendering: optimizeSpeed; line-height: 1.5; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img, picture { max-width: 100%; display: block; }
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select { font: inherit; }
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) { html:focus-within { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+
+@font-face { font-family: "Crimson Pro"; font-weight: 400; src: url("assets/fonts/CrimsonPro-Regular.ttf"); }
+
+@font-face { font-family: "Crimson Pro"; font-weight: 400; font-style: italic; src: url("assets/fonts/CrimsonPro-Italic.ttf"); }
+
+@font-face { font-family: "Crimson Pro"; font-weight: 700; src: url("assets/fonts/CrimsonPro-Bold.ttf"); }
+
+@font-face { font-family: "Crimson Pro"; font-weight: 700; font-style: italic; src: url("assets/fonts/CrimsonPro-BoldItalic.ttf"); }
+
+* { line-height: 1.5; }
+
+a, a:visited { color: var(--color-primary); }
+
+hr { border: none; border-top: 1px solid var(--color-primary); }
+
 .cluster { --space: 1rem; overflow: hidden; }
 
 .cluster > * { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; margin: calc(var(--space) / 2 * -1); }
 
 .cluster > * > * { margin: calc(var(--space) / 2); }
 
-* { box-sizing: border-box; }
+.cluster-end > * { justify-content: flex-end; }
 
-body { background-color: #fefcfb; color: #262626; display: flex; font-family: system-ui; justify-content: flex-end; line-height: 1.5; margin: 0; max-width: 45rem; min-height: 100vh; padding: 2rem; }
+.cluster-fill { flex-grow: 1; }
 
-main { flex: 1; }
+.cover { display: flex; flex-direction: column; min-height: 100vh; padding: 2rem; }
 
-footer { flex: 0; }
+.cover > * { margin-top: 2rem; margin-bottom: 2rem; }
 
-h1, h2 { font-weight: 600; }
+.cover > :first-child:not(main) { margin-top: 0; }
 
-img { max-width: 100%; }
+.cover > :last-child:not(main) { margin-bottom: 0; }
 
-a, a:visited { color: #0f5786; }
+.cover > main { margin-top: auto; margin-bottom: auto; flex: 1; }
 
-code { background-color: #cee8f9; border-radius: .25rem; padding-left: .25rem; padding-right: .25rem; }
+.stack { --space: 1.5rem; display: flex; flex-direction: column; justify-content: flex-start; }
 
-hr { border: none; border-top: 1px solid #a0d3f4; }
+.stack > * { margin-top: 0; margin-bottom: 0; }
 
-.container { display: flex; flex-direction: column; width: 56ch; }
+.stack > * + * { margin-top: var(--space); }
+
+.c-black { color: #262626; }
+
+.c-blue { color: #0f5786; }
+
+.c-white { color: #fefcfb; }
+
+.bg-black { background-color: #262626; }
+
+.bg-blue { background-color: #0f5786; }
+
+.bg-white { background-color: #fefcfb; }
+
+.p-black { --color-primary: #262626; }
+
+.p-blue { --color-primary: #0f5786; }
+
+.p-white { --color-primary: #fefcfb; }
+
+.crimson-pro { font-family: "Crimson Pro"; }
+
+.measure-normal { max-width: 56ch; }
+
+.measure-wide { max-width: 45rem; }
 
 /*# sourceMappingURL=styles.css.map */
