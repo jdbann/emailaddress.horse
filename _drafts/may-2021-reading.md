@@ -24,3 +24,5 @@ I shared my [March](https://twitter.com/jdbannister/status/1377353349310242819 "
 [**Brutal Quest**](https://mammoth-miniatures.onlineweb.shop/Brutal_Quest/p6748004_21082888.aspx "Brutal Quest by Mammoth Miniatures") **by Mammoth Miniatures** — Took a wild foray into wargaming and was a little disappointed. I have nothing to compare this to so can't really rate this as a wargaming ruleset itself, but it just seems to have all the measuring and calculating I got bored of with D&D.
 
 [**Cities of the Dying Land**](https://reverendunclebastard.itch.io/cities-of-the-dying-land "Cities of the Dying Lang by Reverend Uncle Bastard on Itch.io") **by Reverend Uncle Bastard** — A pamphlet of random prompts and inspiration. When I make my own clothbound custom GM screen, there will be a little pocket specifically sized to fit this.
+
+The month was light on books but heavier on games. I felt the need to get through my pile! But there is still a long list to go!
