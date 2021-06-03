@@ -19,6 +19,10 @@
   justify-content: flex-end;
 }
 
+.cluster-overflow {
+  overflow: visible;
+}
+
 .cluster-fill {
   flex-grow: 1;
 }
