@@ -1,0 +1,11 @@
+$size-rules: (
+  size: font-size
+);
+
+@each $class-name, $rule in $size-rules {
+  @each $size-name, $value in $size-map {
+    .#{$class-name}-#{$size-name} {
+      #{$rule}: #{$value};
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$space-rules: (
+);
+
+@each $class-name, $rule in $space-rules {
+  @each $space-name, $value in $space-map {
+    .#{$class-name}-#{$space-name} {
+      #{$rule}: #{$value};
+    }
+  }
+}

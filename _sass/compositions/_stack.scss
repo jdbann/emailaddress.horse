@@ -1,5 +1,5 @@
 .stack {
-  --space: 1.5rem;
+  --space: var(--space-xs);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
