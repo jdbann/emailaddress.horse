@@ -7,39 +7,37 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}emailaddress.horse</title>
     <link rel="stylesheet" type="text/css" href="{{ 'styles.css' | relative_url }}">
     {% if jekyll.environment == "production" %}
-      <script
-        async
-        defer
-        data-domain="emailaddress.horse"
-        src="https://stats.emailaddress.horse/js/index.js"
+    <script
+      async
+      defer
+      data-domain="emailaddress.horse"
+      src="https://stats.emailaddress.horse/js/index.js"
       ></script>
     {% endif %}
   </head>
-  <body class="cluster cluster-end cluster-overflow | measure-wide | crimson-pro c-black bg-white p-blue">
-    <div>
-      <div class="cover | cluster-fill measure-normal">
-        <header>
-          <div class="cluster">
-            <div>
-              {% include menu.html menu="header" %}
-            </div>
+  <body class="fill | measure-wide crimson-pro c-black bg-white p-blue">
+    <div class="cover | center | measure-normal">
+      <header>
+        <div class="cluster">
+          <div>
+            {% include menu.html menu="header" %}
           </div>
-        </header>
+        </div>
+      </header>
 
-        <main class="stack">
-          {{ content }}
-        </main>
+      <main class="stack">
+        {{ content }}
+      </main>
 
-        <footer>
-          <hr/>
+      <footer>
+        <hr/>
 
-          <div class="cluster">
-            <div>
-              {% include menu.html menu="footer" %}
-            </div>
+        <div class="cluster">
+          <div>
+            {% include menu.html menu="footer" %}
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

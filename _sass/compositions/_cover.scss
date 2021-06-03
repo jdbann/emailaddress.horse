@@ -1,13 +1,13 @@
 .cover {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  padding: var(--space-l);
+  min-height: -webkit-fill-available;
+  padding: var(--space-m);
 }
 
 .cover > * {
-  margin-top: var(--space-l);
-  margin-bottom: var(--space-l);
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-m);
 }
 
 .cover > :first-child:not(main) {
