@@ -47,6 +47,8 @@ hr { border: none; border-top: 1px solid var(--color-primary); }
 
 .cluster-end > * { justify-content: flex-end; }
 
+.cluster-overflow { overflow: visible; }
+
 .cluster-fill { flex-grow: 1; }
 
 .cover { display: flex; flex-direction: column; min-height: 100vh; padding: 2rem; }
