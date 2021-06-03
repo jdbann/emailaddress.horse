@@ -33,13 +33,52 @@ input, button, textarea, select { font: inherit; }
 
 @font-face { font-family: "Crimson Pro"; font-weight: 700; font-style: italic; src: url("assets/fonts/CrimsonPro-BoldItalic.ttf"); }
 
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+:root { --fluid-min-width: 320; --fluid-max-width: 1140; --fluid-screen: 100vw; --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  ); }
+
+@media screen and (min-width: 1140px) { :root { --fluid-screen: calc(var(--fluid-max-width) * 1px); } }
+
+:root { --f--2-min: 12.50; --f--2-max: 15.36; --step--2: calc(
+    ((var(--f--2-min) / 16) * 1rem) + (var(--f--2-max) - var(--f--2-min)) *
+      var(--fluid-bp)
+  ); --f--1-min: 15.00; --f--1-max: 19.20; --step--1: calc(
+    ((var(--f--1-min) / 16) * 1rem) + (var(--f--1-max) - var(--f--1-min)) *
+      var(--fluid-bp)
+  ); --f-0-min: 18.00; --f-0-max: 24.00; --step-0: calc(
+    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
+      var(--fluid-bp)
+  ); --f-1-min: 21.60; --f-1-max: 30.00; --step-1: calc(
+    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
+      var(--fluid-bp)
+  ); --f-2-min: 25.92; --f-2-max: 37.50; --step-2: calc(
+    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
+      var(--fluid-bp)
+  ); --f-3-min: 31.10; --f-3-max: 46.88; --step-3: calc(
+    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
+      var(--fluid-bp)
+  ); --f-4-min: 37.32; --f-4-max: 58.59; --step-4: calc(
+    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
+      var(--fluid-bp)
+  ); --f-5-min: 44.79; --f-5-max: 73.24; --step-5: calc(
+    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
+      var(--fluid-bp)
+  ); }
+
+/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6, */
+:root { --fc-3xs-min: (var(--fc-s-min) * 0.25); --fc-3xs-max: (var(--fc-s-max) * 0.25); --fc-2xs-min: (var(--fc-s-min) * 0.5); --fc-2xs-max: (var(--fc-s-max) * 0.5); --fc-xs-min: (var(--fc-s-min) * 0.75); --fc-xs-max: (var(--fc-s-max) * 0.75); --fc-s-min: (var(--f-0-min)); --fc-s-max: (var(--f-0-max)); --fc-m-min: (var(--fc-s-min) * 1.5); --fc-m-max: (var(--fc-s-max) * 1.5); --fc-l-min: (var(--fc-s-min) * 2); --fc-l-max: (var(--fc-s-max) * 2); --fc-xl-min: (var(--fc-s-min) * 3); --fc-xl-max: (var(--fc-s-max) * 3); --fc-2xl-min: (var(--fc-s-min) * 4); --fc-2xl-max: (var(--fc-s-max) * 4); --fc-3xl-min: (var(--fc-s-min) * 6); --fc-3xl-max: (var(--fc-s-max) * 6); /* T-shirt sizes */ --space-3xs: calc(((var(--fc-3xs-min) / 16) * 1rem) + (var(--fc-3xs-max) - var(--fc-3xs-min)) * var(--fluid-bp)); --space-2xs: calc(((var(--fc-2xs-min) / 16) * 1rem) + (var(--fc-2xs-max) - var(--fc-2xs-min)) * var(--fluid-bp)); --space-xs: calc(((var(--fc-xs-min) / 16) * 1rem) + (var(--fc-xs-max) - var(--fc-xs-min)) * var(--fluid-bp)); --space-s: calc(((var(--fc-s-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-s-min)) * var(--fluid-bp)); --space-m: calc(((var(--fc-m-min) / 16) * 1rem) + (var(--fc-m-max) - var(--fc-m-min)) * var(--fluid-bp)); --space-l: calc(((var(--fc-l-min) / 16) * 1rem) + (var(--fc-l-max) - var(--fc-l-min)) * var(--fluid-bp)); --space-xl: calc(((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-xl-min)) * var(--fluid-bp)); --space-2xl: calc(((var(--fc-2xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-2xl-min)) * var(--fluid-bp)); --space-3xl: calc(((var(--fc-3xl-min) / 16) * 1rem) + (var(--fc-3xl-max) - var(--fc-3xl-min)) * var(--fluid-bp)); }
+
 * { line-height: 1.5; }
+
+html { font-size: var(--step-0); }
 
 a, a:visited { color: var(--color-primary); }
 
 hr { border: none; border-top: 1px solid var(--color-primary); }
 
-.cluster { --space: 1rem; overflow: hidden; }
+.cluster { --space: var(--space-2xs); overflow: hidden; }
 
 .cluster > * { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; margin: calc(var(--space) / 2 * -1); }
 
@@ -51,9 +90,9 @@ hr { border: none; border-top: 1px solid var(--color-primary); }
 
 .cluster-fill { flex-grow: 1; }
 
-.cover { display: flex; flex-direction: column; min-height: 100vh; padding: 2rem; }
+.cover { display: flex; flex-direction: column; min-height: 100vh; padding: var(--space-l); }
 
-.cover > * { margin-top: 2rem; margin-bottom: 2rem; }
+.cover > * { margin-top: var(--space-l); margin-bottom: var(--space-l); }
 
 .cover > :first-child:not(main) { margin-top: 0; }
 
@@ -61,7 +100,7 @@ hr { border: none; border-top: 1px solid var(--color-primary); }
 
 .cover > main { margin-top: auto; margin-bottom: auto; flex: 1; }
 
-.stack { --space: 1.5rem; display: flex; flex-direction: column; justify-content: flex-start; }
+.stack { --space: var(--space-xs); display: flex; flex-direction: column; justify-content: flex-start; }
 
 .stack > * { margin-top: 0; margin-bottom: 0; }
 
@@ -89,6 +128,22 @@ hr { border: none; border-top: 1px solid var(--color-primary); }
 
 .measure-normal { max-width: 56ch; }
 
-.measure-wide { max-width: 45rem; }
+.measure-wide { max-width: 80ch; }
+
+.size--2 { font-size: var(--step--2); }
+
+.size--1 { font-size: var(--step--1); }
+
+.size-0 { font-size: var(--step-0); }
+
+.size-1 { font-size: var(--step-1); }
+
+.size-2 { font-size: var(--step-2); }
+
+.size-3 { font-size: var(--step-3); }
+
+.size-4 { font-size: var(--step-4); }
+
+.size-5 { font-size: var(--step-5); }
 
 /*# sourceMappingURL=styles.css.map */
