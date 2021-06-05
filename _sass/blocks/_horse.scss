@@ -1,0 +1,7 @@
+.horse {
+  background-image: url("assets/imgs/horse.png");
+  background-position: bottom var(--space-m) right var(--space-m);
+  background-repeat: no-repeat;
+  background-size: calc(min(100vw, 600px) - var(--space-m) * 2);
+  background-attachment: fixed;
+}
