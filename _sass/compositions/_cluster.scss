@@ -14,15 +14,3 @@
 .cluster > * > * {
   margin: calc(var(--space) / 2);
 }
-
-.cluster-end > * {
-  justify-content: flex-end;
-}
-
-.cluster-overflow {
-  overflow: visible;
-}
-
-.cluster-fill {
-  flex-grow: 1;
-}

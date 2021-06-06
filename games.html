@@ -1,0 +1,72 @@
+---
+title: Games
+menus:
+  header:
+    weight: 3
+---
+
+<p>To highlight my compulsion to collect indie games, and my shame at taking so
+long to read and play them, here is my collection and the embarrassing data.</p>
+
+{% for game in site.games %}
+<section id="{{ game.slug }}">
+  <h2>
+    {{ game.title }}
+  </h2>
+
+  {{ game.content }}
+
+  <small class="c-grey p-grey">
+    <a href="{{ game.external_url }}">View game</a>
+    {% if game.bought_on %}
+    &centerdot; Bought on {{ game.bought_on | date_to_long_string: "ordinal", "UK" }}
+    {% endif%}
+
+    {% if game.read_on %}
+    &centerdot; Read on {{ game.read_on | date_to_long_string: "ordinal", "UK" }}
+    {% endif%}
+
+    {% if game.played_on %}
+    &centerdot; Played on {{ game.played_on | date_to_long_string: "ordinal", "UK" }}
+    {% endif%}
+  </small>
+
+  {% assign query = "item.games contains '" | append: game.slug | append: "'" %}
+  {% assign posts = site.posts | where_exp: "item", query %}
+
+  {% if posts != empty %}
+  <ul>
+    {% for post in posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+{% endfor %}
+
+<h2>Changelog</h2>
+
+{% assign logs = split: "" %}
+
+{% for game in site.games %}
+{% if game.changelog %}
+{% assign logs = logs | concat: game.changelog %}
+{% endif %}
+{% endfor %}
+{% assign logs = logs | sort: "date" | reverse %}
+{% assign log_groups = logs | group_by_exp: "log", "log.date | date: '%B %Y'" %}
+
+{% for log_group in log_groups %}
+<details>
+  <summary>{{ log_group.name }}</summary>
+  <ul>
+    {% for log in log_group.items %}
+    <li>
+      {{ log.change }}
+    </li>
+    {% endfor %}
+  </ul>
+</details>
+{% endfor %}

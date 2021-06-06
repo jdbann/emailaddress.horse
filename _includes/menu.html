@@ -1,7 +1,7 @@
-{% for item in site.menus[include.menu] %}
-  {% if page.url == item.url %}
-    <span>{{ item.title }}</span>
-  {% else %}
-    <a href="{{ item.url }}">{{ item.title }}</a>
-  {% endif %}
-{% endfor %}
+<div class="cluster">
+  <div>
+    {% for item in site.menus[include.menu] %}
+    {% include menu_item.html url=item.url title=item.title %}
+    {% endfor %}
+  </div>
+</div>

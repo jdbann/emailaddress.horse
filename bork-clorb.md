@@ -2,7 +2,7 @@
 title: Börk Clorb
 menus:
   header:
-    weight: 3
+    weight: 4
 ---
 
 I'm setting up a book club for indie RPGs. It's called Börk Clorb as a reference

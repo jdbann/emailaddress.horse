@@ -3,6 +3,9 @@ title: emailaddress.horse
 timezone: UTC
 url: https://emailaddress.horse
 collections:
+  games:
+    title: Games
+    sort: title
   posts:
     title: Posts
     output: true
