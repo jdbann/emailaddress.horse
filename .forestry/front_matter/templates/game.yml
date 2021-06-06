@@ -1,0 +1,26 @@
+---
+label: Game
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: external_url
+  label: external_url
+- type: datetime
+  name: bought_on
+  label: bought_on
+- type: datetime
+  name: read_on
+  label: read_on
+- type: field_group_list
+  name: changelog
+  label: changelog
+  fields:
+  - type: datetime
+    name: date
+    label: date
+  - type: text
+    name: change
+    label: change
