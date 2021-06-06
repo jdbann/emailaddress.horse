@@ -44,3 +44,5 @@ fields:
   config:
     min: 1
     labelField: change
+pages:
+- _games/mausritter.md
