@@ -12,28 +12,14 @@ layout: default
 {{ content }}
 
 {% if page.games %}
-  {% assign found_slugs = split: "" %}
+<footer class="c-grey p-grey">
+  <small>
+    Referenced games:
 
-  {% for game_slug in page.games %}
-    {% assign game = site.games | find: "slug", game_slug %}
-
-    {% if game %}
-      {% assign game_slug_array = game_slug | split: "," %}
-      {% assign found_slugs = found_slugs | concat: game_slug_array %}
-    {% endif %}
-  {% endfor %}
-
-  {% if found_slugs != empty %}
-  <footer class="c-grey p-grey">
-    <small>
-      Referenced games:
-
-      {% for slug in found_slugs %}
-        {% assign game = site.games | find: "slug", slug %}
-
-        <a href="/games#{{ game.slug }}">{{ game.title }}</a>
-      {% endfor %}
-    </small>
-  </footer>
-  {% endif %}
+    {% for path in page.games %}
+    {% assign game = site.games | find: "path", path %}
+    <a href="/games#{{ game.slug }}">{{ game.title }}</a>
+    {% endfor %}
+  </small>
+</footer>
 {% endif %}
