@@ -13,3 +13,7 @@
 .stack > * + * {
   margin-top: var(--space);
 }
+
+.stack-small > * {
+  --space: var(--space-3xs);
+}
