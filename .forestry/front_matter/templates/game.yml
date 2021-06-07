@@ -45,6 +45,7 @@ fields:
     min: 1
     labelField: change
 pages:
+- _games/aether-operations.md
 - _games/cairn.md
 - _games/mausritter.md
 - _games/metal-queens-ov-skull-mountain.md
