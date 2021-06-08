@@ -5,7 +5,7 @@ url: https://emailaddress.horse
 collections:
   games:
     title: Games
-    sort: title
+    sort_by: title
   posts:
     title: Posts
     output: true
