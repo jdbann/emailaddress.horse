@@ -52,10 +52,11 @@ long to read and play them, here is my collection and the embarrassing data.</p>
 {% assign logs = split: "" %}
 
 {% for game in site.games %}
-{% if game.changelog %}
-{% assign logs = logs | concat: game.changelog %}
-{% endif %}
+  {% if game.changelog %}
+    {% assign logs = logs | concat: game.changes %}
+  {% endif %}
 {% endfor %}
+
 {% assign logs = logs | sort: "date" | reverse %}
 {% assign log_groups = logs | group_by_exp: "log", "log.date | date: '%B %Y'" %}
 
@@ -63,9 +64,15 @@ long to read and play them, here is my collection and the embarrassing data.</p>
 <details>
   <summary>{{ log_group.name }}</summary>
   <ul>
-    {% for log in log_group.items %}
+    {% assign type_groups = log_group.items | group_by: "type" %}
+
+    {% for type_group in type_groups %}
     <li>
-      {{ log.change }}
+      {% case type_group.name %}
+        {% when "added" %}
+          Added
+          {{ type_group.items | map: "title" | sort_natural | array_to_sentence_string }}
+      {% endcase %}
     </li>
     {% endfor %}
   </ul>
