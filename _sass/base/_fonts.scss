@@ -23,3 +23,7 @@
   font-style: italic;
   src: url("assets/fonts/CrimsonPro-BoldItalic.ttf");
 }
+
+* {
+  font-feature-settings: "liga", "clig", "dlig", "onum";
+}
