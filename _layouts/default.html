@@ -6,6 +6,15 @@
     {% feed_meta %}
     <title>{% if page.title %}{{ page.title }} - {% endif %}emailaddress.horse</title>
     <link rel="stylesheet" type="text/css" href="{{ 'styles.css' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/apple-touch-icon.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/favicon-32x32.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/favicon-16x16.png' | absolute_url }}">
+    <link rel="manifest" href="{{ '/assets/icons/site.webmanifest' | absolute_url }}">
+    <link rel="mask-icon" href="{{ '/assets/icons/safari-pinned-tab.svg' | absolute_url }}" color="#262626">
+    <link rel="shortcut icon" href="{{ '/assets/icons/favicon.ico' | absolute_url }}">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-config" content="{{ '/assets/icons/browserconfig.xml' | absolute_url }}">
+    <meta name="theme-color" content="#fefcfb">
     {% if jekyll.environment == "production" %}
     <script
       async
