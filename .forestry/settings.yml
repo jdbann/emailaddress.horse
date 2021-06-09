@@ -9,6 +9,8 @@ sections:
   label: Habits
   create: documents
   match: "**/*"
+  templates:
+  - habit
 - type: jekyll-posts
   label: Posts
   create: all
