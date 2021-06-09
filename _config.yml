@@ -9,6 +9,10 @@ collections:
   posts:
     title: Posts
     output: true
+  habits:
+    title: Habits
+    output: false
+    sort_by: title
 defaults:
 - scope:
     path: ''

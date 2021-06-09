@@ -8,25 +8,21 @@ title: Habits
   please allow me to share my habit tracking.
 </p>
 
-<h2>Mindfulness</h2>
+{% for habit in site.habits %}
+<h2>{{ habit.title }}</h2>
 
 <figure
   data-controller="habit-chart"
-  data-habit-chart-dates-value="{{ site.data.habits.meditation | jsonify | xml_escape }}"
+  data-habit-chart-dates-value="{{ habit.occurrences | map: 'date' | jsonify | xml_escape }}"
 >
   <div data-habit-chart-target="jsMessage">
     Javascript is required to view this chart.
   </div>
   <div data-habit-chart-target="chart"></div>
-  <figcaption>
-    The days John has meditated, grouped by weeks of the year.
-  </figcaption>
+  <figcaption>{{ habit.caption }}</figcaption>
 </figure>
 
-<p>
-  I believe that mindful meditation will help me recognise when I am in a
-  fight-or-flight state, and help me let such a mood run its course.
-</p>
+{{ habit.content }} {% endfor %}
 
 <script type="module">
   import * as Plot from "https://cdn.skypack.dev/@observablehq/plot@0.1";
