@@ -1,7 +1,17 @@
 ---
 label: Habit
-hide_body: true
+hide_body: false
 fields:
-- type: list
-  name: Meditation
-  label: Meditation
+- type: text
+  name: title
+  label: title
+- type: text
+  name: caption
+  label: caption
+- type: field_group_list
+  name: occurrences
+  label: occurrences
+  fields:
+  - type: datetime
+    name: date
+    label: date
