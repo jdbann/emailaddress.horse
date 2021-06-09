@@ -13,7 +13,9 @@ sections:
   - habit
 - type: jekyll-posts
   label: Posts
-  create: all
+  create: documents
+  templates:
+  - post
 - type: directory
   path: _games
   label: Games
