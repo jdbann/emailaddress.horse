@@ -1,0 +1,131 @@
+---
+title: Habits
+---
+
+<p>
+  I am, as ever, trying to improve the foundations of my life. One way is by
+  building better habits and routines. Accountability is a good motivator so
+  please allow me to share my habit tracking.
+</p>
+
+<h2>Mindfulness</h2>
+
+<figure
+  data-controller="habit-chart"
+  data-habit-chart-dates-value="{{ site.data.habits.meditation | jsonify | xml_escape }}"
+>
+  <div data-habit-chart-target="jsMessage">
+    Javascript is required to view this chart.
+  </div>
+  <div class="frame" data-habit-chart-target="chart" style="--n: 0;"></div>
+  <figcaption>
+    The days John has meditated, grouped by weeks of the year.
+  </figcaption>
+</figure>
+
+<p>
+  I believe that mindful meditation will help me recognise when I am in a
+  fight-or-flight state, and help me let such a mood run its course.
+</p>
+
+<script type="module">
+  import * as Plot from "https://cdn.skypack.dev/@observablehq/plot@0.1";
+  import { timeFormat } from "https://cdn.skypack.dev/d3-time-format@4";
+  import { Application, Controller } from "https://cdn.skypack.dev/stimulus";
+
+  const application = Application.start();
+
+  application.register(
+    "habit-chart",
+    class extends Controller {
+      static targets = ["chart", "jsMessage"];
+      static values = {
+        dates: Array,
+      };
+
+      get dates() {
+        return this.datesValue.map((date) => new Date(date));
+      }
+
+      get radius() {
+        return this.radiusValue || 5;
+      }
+
+      weekOfYear(date) {
+        return parseInt(timeFormat("%W")(date));
+      }
+
+      dayOfWeek(date) {
+        return parseInt(timeFormat("%u")(date));
+      }
+
+      formattedDate(date) {
+        return timeFormat("%B %-d, %Y")(date);
+      }
+
+      get weeks() {
+        return (
+          this.weekOfYear(this.dates.sort((a, b) => a < b)[0]) -
+          this.weekOfYear(this.dates.sort((a, b) => a > b)[0]) +
+          1
+        );
+      }
+
+      get width() {
+        return this.chartTarget.getBoundingClientRect().width;
+      }
+
+      get height() {
+        return this.weeks * this.radius * 8;
+      }
+
+      connect() {
+        this.jsMessageTarget.style.display = "none";
+
+        this.chartTarget.appendChild(
+          Plot.plot({
+            width: this.width,
+            height: this.height,
+            marginRight: 40,
+            facet: {
+              data: this.dates,
+              y: this.weekOfYear,
+              marginLeft: 40,
+              grid: true,
+            },
+            x: {
+              domain: [1, 2, 3, 4, 5, 6, 7],
+              axis: false,
+              round: true,
+              grid: true,
+            },
+            fy: {
+              domain: Array.from(
+                {
+                  length:
+                    this.dates.map(this.weekOfYear).reverse()[0] -
+                    this.dates.map(this.weekOfYear)[0] +
+                    1,
+                },
+                (v, i) => this.dates.map(this.weekOfYear)[0] + i
+              ),
+              grid: true,
+            },
+            marks: [
+              Plot.dotX(this.dates, {
+                x: this.dayOfWeek,
+                r: this.radius,
+                fill: "black",
+                stroke: null,
+                title: this.formattedDate,
+              }),
+            ],
+          })
+        );
+
+        this.chartTarget.style.setProperty("--n", this.height);
+        this.chartTarget.style.setProperty("--d", this.width);
+      }
+    }
+  );
+</script>
