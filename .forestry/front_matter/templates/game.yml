@@ -2,58 +2,58 @@
 label: Game
 hide_body: false
 fields:
-  - type: text
-    name: title
-    label: Name
-    config:
-      required: true
-  - type: text
-    name: external_url
-    label: Link
-    config:
-      required: true
+- type: text
+  name: title
+  label: Name
+  config:
+    required: true
+- type: text
+  name: external_url
+  label: Link
+  config:
+    required: true
+- type: datetime
+  name: bought_on
+  label: Bought On
+  config:
+    date_format: DD/MM/YYYY
+    export_format: YYYY-MM-DD
+- type: datetime
+  name: read_on
+  label: Read On
+  config:
+    date_format: DD/MM/YYYY
+    export_format: YYYY-MM-DD
+- type: field_group_list
+  name: changelog
+  label: Changelog
+  fields:
   - type: datetime
-    name: bought_on
-    label: Bought On
+    name: date
+    label: Date
     config:
       date_format: DD/MM/YYYY
       export_format: YYYY-MM-DD
-  - type: datetime
-    name: read_on
-    label: Read On
+      required: true
+    default: now
+  - name: type
+    type: select
+    default: added
     config:
-      date_format: DD/MM/YYYY
-      export_format: YYYY-MM-DD
-  - type: field_group_list
-    name: changelog
-    label: Changelog
-    fields:
-      - type: datetime
-        name: date
-        label: Date
-        config:
-          date_format: DD/MM/YYYY
-          export_format: YYYY-MM-DD
-          required: true
-        default: now
-      - name: type
-        type: select
-        default: added
-        config:
-          required: true
-          options:
-            - added
-          source:
-            type: simple
-            section:
-            file:
-            path:
-        label: Type
-    config:
-      min: 1
-      labelField: change
+      required: true
+      options:
+      - added
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Type
+  config:
+    min: 1
+    labelField: change
 pages:
-  - _games/aether-operations.md
-  - _games/cairn.md
-  - _games/mausritter.md
-  - _games/metal-queens-ov-skull-mountain.md
+- _games/aether-operations.md
+- _games/cairn.md
+- _games/mausritter.md
+- _games/metal-queens-ov-skull-mountain.md

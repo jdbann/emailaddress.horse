@@ -2,29 +2,29 @@
 label: Post
 hide_body: false
 fields:
-  - type: text
-    name: title
-    label: Title
-    config:
-      required: true
-  - type: datetime
-    name: date
-    label: Date
-    config:
-      date_format: DD/MM/YYYY
-      time_format: ""
-      display_utc: true
-      required: true
-    default: now
-  - name: games
-    type: list
-    config:
-      use_select: true
-      min:
-      max:
-      source:
-        type: pages
-        section: games
-    label: Games
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: datetime
+  name: date
+  label: Date
+  config:
+    date_format: DD/MM/YYYY
+    time_format: ''
+    display_utc: true
+    required: true
+  default: now
+- name: games
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: pages
+      section: games
+  label: Games
 pages:
-  - _posts/2021-06-02-may-2021-reading.md
+- _posts/2021-06-02-may-2021-reading.md
