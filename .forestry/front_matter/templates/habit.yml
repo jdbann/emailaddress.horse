@@ -2,6 +2,6 @@
 label: Habit
 hide_body: true
 fields:
-- type: list
-  name: Meditation
-  label: Meditation
+  - type: list
+    name: Meditation
+    label: Meditation

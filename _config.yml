@@ -14,19 +14,19 @@ collections:
     output: false
     sort_by: title
 defaults:
-- scope:
-    path: ''
-  values:
-    layout: page
-- scope:
-    path: ''
-    type: posts
-  values:
-    layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 plugins:
-- jekyll-feed
-- jekyll-gist
-- jekyll-menus
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-menus
 description: John Bannister's personal website.
 author: John Bannister
 permalink: "/:collection/:title"

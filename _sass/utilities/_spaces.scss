@@ -1,5 +1,4 @@
-$space-rules: (
-);
+$space-rules: ();
 
 @each $class-name, $rule in $space-rules {
   @each $space-name, $value in $space-map {

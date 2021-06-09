@@ -18,42 +18,42 @@
 }
 
 :root {
-  --f--2-min: 12.50;
+  --f--2-min: 12.5;
   --f--2-max: 15.36;
   --step--2: calc(
     ((var(--f--2-min) / 16) * 1rem) + (var(--f--2-max) - var(--f--2-min)) *
       var(--fluid-bp)
   );
 
-  --f--1-min: 15.00;
-  --f--1-max: 19.20;
+  --f--1-min: 15;
+  --f--1-max: 19.2;
   --step--1: calc(
     ((var(--f--1-min) / 16) * 1rem) + (var(--f--1-max) - var(--f--1-min)) *
       var(--fluid-bp)
   );
 
-  --f-0-min: 18.00;
-  --f-0-max: 24.00;
+  --f-0-min: 18;
+  --f-0-max: 24;
   --step-0: calc(
     ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
       var(--fluid-bp)
   );
 
-  --f-1-min: 21.60;
-  --f-1-max: 30.00;
+  --f-1-min: 21.6;
+  --f-1-max: 30;
   --step-1: calc(
     ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
       var(--fluid-bp)
   );
 
   --f-2-min: 25.92;
-  --f-2-max: 37.50;
+  --f-2-max: 37.5;
   --step-2: calc(
     ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
       var(--fluid-bp)
   );
 
-  --f-3-min: 31.10;
+  --f-3-min: 31.1;
   --f-3-max: 46.88;
   --step-3: calc(
     ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *

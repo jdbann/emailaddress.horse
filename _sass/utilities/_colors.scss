@@ -1,7 +1,7 @@
 $color-rules: (
   c: color,
   bg: background-color,
-  p: --color-primary
+  p: --color-primary,
 );
 
 @each $class-name, $rule in $color-rules {

@@ -1,5 +1,5 @@
 $size-rules: (
-  size: font-size
+  size: font-size,
 );
 
 @each $class-name, $rule in $size-rules {

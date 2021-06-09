@@ -9,13 +9,13 @@ $color-map: (
   black: $color-black,
   blue: $color-blue,
   grey: $color-grey,
-  white: $color-white
+  white: $color-white,
 );
 
 $font-crimson-pro: "Crimson Pro", "Georgia", "Garamond";
 
 $font-map: (
-  crimson-pro: $font-crimson-pro
+  crimson-pro: $font-crimson-pro,
 );
 
 $size-map: (
@@ -38,5 +38,5 @@ $space-map: (
   l: var(--space-l),
   xl: var(--space-xl),
   2xl: var(--space-2xl),
-  3xl: var(--space-3xl)
+  3xl: var(--space-3xl),
 );
