@@ -17,7 +17,7 @@ title: Habits
   <div data-habit-chart-target="jsMessage">
     Javascript is required to view this chart.
   </div>
-  <div class="frame" data-habit-chart-target="chart" style="--n: 0;"></div>
+  <div data-habit-chart-target="chart"></div>
   <figcaption>
     The days John has meditated, grouped by weeks of the year.
   </figcaption>
@@ -43,20 +43,12 @@ title: Habits
         dates: Array,
       };
 
-      get dates() {
-        return this.datesValue.map((date) => new Date(date));
-      }
-
-      get radius() {
-        return this.radiusValue || 5;
-      }
-
       weekOfYear(date) {
         return parseInt(timeFormat("%W")(date));
       }
 
       dayOfWeek(date) {
-        return parseInt(timeFormat("%u")(date));
+        return timeFormat("%a")(date);
       }
 
       formattedDate(date) {
@@ -75,8 +67,9 @@ title: Habits
         return this.chartTarget.getBoundingClientRect().width;
       }
 
-      get height() {
-        return this.weeks * this.radius * 8;
+      initialize() {
+        this.dates = this.datesValue.map((date) => new Date(date));
+        this.radius = 5;
       }
 
       connect() {
@@ -85,17 +78,13 @@ title: Habits
         this.chartTarget.appendChild(
           Plot.plot({
             width: this.width,
-            height: this.height,
-            marginRight: 40,
             facet: {
               data: this.dates,
               y: this.weekOfYear,
-              marginLeft: 40,
               grid: true,
             },
             x: {
-              domain: [1, 2, 3, 4, 5, 6, 7],
-              axis: false,
+              domain: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
               round: true,
               grid: true,
             },
@@ -122,9 +111,6 @@ title: Habits
             ],
           })
         );
-
-        this.chartTarget.style.setProperty("--n", this.height);
-        this.chartTarget.style.setProperty("--d", this.width);
       }
     }
   );
