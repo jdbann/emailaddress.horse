@@ -4,14 +4,23 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
+  config:
+    required: true
 - type: text
   name: caption
-  label: caption
+  label: Caption
+  config:
+    required: true
 - type: field_group_list
   name: occurrences
-  label: occurrences
+  label: Occurrences
   fields:
   - type: datetime
     name: date
-    label: date
+    label: Date
+    config:
+      date_format: DD/MM/YYYY
+      export_format: YYYY-MM-DD
+      required: true
+    default: now
