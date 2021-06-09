@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://emailaddress.horse/feed.xml"
+      title="emailaddress.horse"
+    />
+    <title>Habits - emailaddress.horse</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://emailaddress.horse/assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://emailaddress.horse/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://emailaddress.horse/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="https://emailaddress.horse/assets/icons/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="https://emailaddress.horse/assets/icons/safari-pinned-tab.svg"
+      color="#262626"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://emailaddress.horse/assets/icons/favicon.ico"
+    />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta
+      name="msapplication-config"
+      content="https://emailaddress.horse/assets/icons/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#fefcfb" />
+
+    <script
+      async
+      defer
+      data-domain="emailaddress.horse"
+      src="https://stats.emailaddress.horse/js/index.js"
+    ></script>
+  </head>
+  <body class="fill horse | measure-wide crimson-pro c-black bg-white p-blue">
+    <div class="cover | center | measure-normal">
+      <header>
+        <div class="cluster">
+          <div>
+            <a href="/">emailaddress.horse</a>
+
+            <div class="cluster">
+              <div>
+                <a href="/posts">Posts</a>
+
+                <a href="/games">Games</a>
+
+                <a href="/bork-clorb">Börk Clorb</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="stack">
+        <h1>Habits</h1>
+
+        <p>
+          I am, as ever, trying to improve the foundations of my life. One way
+          is by building better habits and routines. Accountability is a good
+          motivator so please allow me to share my habit tracking.
+        </p>
+
+        <h2>Mindfulness</h2>
+
+        <figure
+          data-controller="habit-chart"
+          data-habit-chart-dates-value='["2021-06-09"]'
+        >
+          <div data-habit-chart-target="jsMessage">
+            Javascript is required to view this chart.
+          </div>
+          <div
+            class="frame"
+            data-habit-chart-target="chart"
+            style="--n: 0"
+          ></div>
+          <figcaption>
+            The days John has meditated, grouped by weeks of the year.
+          </figcaption>
+        </figure>
+
+        <p>
+          I believe that mindful meditation will help me recognise when I am in
+          a fight-or-flight state, and help me let such a mood run its course.
+        </p>
+
+        <script type="module">
+          import * as Plot from "https://cdn.skypack.dev/@observablehq/plot@0.1";
+          import { timeFormat } from "https://cdn.skypack.dev/d3-time-format@4";
+          import {
+            Application,
+            Controller,
+          } from "https://cdn.skypack.dev/stimulus";
+
+          const application = Application.start();
+
+          application.register(
+            "habit-chart",
+            class extends Controller {
+              static targets = ["chart", "jsMessage"];
+              static values = {
+                dates: Array,
+              };
+
+              get dates() {
+                return this.datesValue.map((date) => new Date(date));
+              }
+
+              get radius() {
+                return this.radiusValue || 5;
+              }
+
+              weekOfYear(date) {
+                return parseInt(timeFormat("%W")(date));
+              }
+
+              dayOfWeek(date) {
+                return parseInt(timeFormat("%u")(date));
+              }
+
+              formattedDate(date) {
+                return timeFormat("%B %-d, %Y")(date);
+              }
+
+              get weeks() {
+                return (
+                  this.weekOfYear(this.dates.sort((a, b) => a < b)[0]) -
+                  this.weekOfYear(this.dates.sort((a, b) => a > b)[0]) +
+                  1
+                );
+              }
+
+              get width() {
+                return this.chartTarget.getBoundingClientRect().width;
+              }
+
+              get height() {
+                return this.weeks * this.radius * 8;
+              }
+
+              connect() {
+                this.jsMessageTarget.style.display = "none";
+
+                this.chartTarget.appendChild(
+                  Plot.plot({
+                    width: this.width,
+                    height: this.height,
+                    marginRight: 40,
+                    facet: {
+                      data: this.dates,
+                      y: this.weekOfYear,
+                      marginLeft: 40,
+                      grid: true,
+                    },
+                    x: {
+                      domain: [1, 2, 3, 4, 5, 6, 7],
+                      axis: false,
+                      round: true,
+                      grid: true,
+                    },
+                    fy: {
+                      domain: Array.from(
+                        {
+                          length:
+                            this.dates.map(this.weekOfYear).reverse()[0] -
+                            this.dates.map(this.weekOfYear)[0] +
+                            1,
+                        },
+                        (v, i) => this.dates.map(this.weekOfYear)[0] + i
+                      ),
+                      grid: true,
+                    },
+                    marks: [
+                      Plot.dotX(this.dates, {
+                        x: this.dayOfWeek,
+                        r: this.radius,
+                        fill: "black",
+                        stroke: null,
+                        title: this.formattedDate,
+                      }),
+                    ],
+                  })
+                );
+
+                this.chartTarget.style.setProperty("--n", this.height);
+                this.chartTarget.style.setProperty("--d", this.width);
+              }
+            }
+          );
+        </script>
+      </main>
+
+      <footer>
+        <hr />
+
+        <div class="cluster">
+          <div>
+            <div class="cluster">
+              <div>
+                <a href="https://twitter.com/jdbannister">@jdbannister</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
