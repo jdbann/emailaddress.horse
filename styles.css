@@ -117,6 +117,8 @@ small { font-size: var(--step--1); }
 
 figcaption { font-size: var(--step--1); font-style: italic; text-align: center; }
 
+blockquote { border-left: var(--space-3xs) solid var(--color-primary); padding-left: var(--space-xs); font-style: italic; }
+
 .center { margin-left: auto; margin-right: auto; }
 
 .cluster { --space: var(--space-2xs); overflow: hidden; }
