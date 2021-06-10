@@ -54,6 +54,8 @@
       data-domain="emailaddress.horse"
       src="https://stats.emailaddress.horse/js/index.js"
     ></script>
+
+    <script src="assets/js/habit-chart.js" type="module"></script>
   </head>
   <body class="fill horse | measure-wide crimson-pro c-black bg-white p-blue">
     <div class="cover | center | measure-normal">
@@ -93,7 +95,9 @@
           data-habit-chart-dates-value='["2021-06-10","2021-06-09"]'
         >
           <div data-habit-chart-target="jsMessage">
-            Javascript is required to view this chart.
+            Javascript is required to view this chart. You might have javascript
+            disabled, or there could have been a problem loading the files.
+            Sorry!
           </div>
           <div data-habit-chart-target="chart"></div>
           <figcaption>
@@ -105,155 +109,6 @@
           I believe that mindful meditation will help me recognise when I am in
           a fight-or-flight state, and help me let such a mood run its course.
         </p>
-
-        <script type="module">
-          import * as Plot from "https://cdn.skypack.dev/@observablehq/plot@0.1";
-          import { timeFormat } from "https://cdn.skypack.dev/d3-time-format@4";
-          import {
-            Application,
-            Controller,
-          } from "https://cdn.skypack.dev/stimulus";
-          import {
-            addDays,
-            compareAsc,
-            compareDesc,
-            differenceInDays,
-            isEqual,
-            max,
-          } from "https://cdn.skypack.dev/date-fns";
-
-          const application = Application.start();
-
-          application.register(
-            "habit-chart",
-            class extends Controller {
-              static targets = ["chart", "jsMessage"];
-              static values = {
-                dates: Array,
-              };
-
-              weekOfYear(date) {
-                return parseInt(timeFormat("%W")(date.date));
-              }
-
-              dayOfWeek(date) {
-                return timeFormat("%a")(date.date);
-              }
-
-              formattedDate(date) {
-                return timeFormat("%B %-d, %Y")(date.date);
-              }
-
-              get weeks() {
-                return (
-                  this.weekOfYear(
-                    this.dates.map((d) => d.date).sort(compareAsc)[0]
-                  ) -
-                  this.weekOfYear(
-                    this.dates.map((d) => d.date).sort(compareDesc)[0]
-                  ) +
-                  1
-                );
-              }
-
-              get width() {
-                return this.chartTarget.getBoundingClientRect().width;
-              }
-
-              set dates(dates) {
-                const parsedDates = dates
-                  .map((date) => new Date(date))
-                  .sort(compareAsc);
-
-                this._dates = Array.from(
-                  {
-                    length:
-                      differenceInDays(
-                        max([parsedDates.slice().reverse()[0], new Date()]),
-                        parsedDates[0]
-                      ) + 1,
-                  },
-                  (v, i) => {
-                    const date = addDays(parsedDates[0], i);
-                    return {
-                      date: date,
-                      didHabit:
-                        parsedDates.findIndex((checkDate) =>
-                          isEqual(checkDate, date)
-                        ) >= 0,
-                      today: date.toDateString() == new Date().toDateString(),
-                    };
-                  }
-                );
-              }
-
-              get dates() {
-                return this._dates;
-              }
-
-              initialize() {
-                this.dates = this.datesValue;
-                this.radius = 5;
-              }
-
-              connect() {
-                this.jsMessageTarget.style.display = "none";
-
-                this.chartTarget.appendChild(
-                  Plot.plot({
-                    width: this.width,
-                    facet: {
-                      data: this.dates,
-                      y: this.weekOfYear,
-                      grid: true,
-                    },
-                    x: {
-                      domain: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-                      round: true,
-                      grid: true,
-                    },
-                    fy: {
-                      domain: Array.from(
-                        {
-                          length:
-                            this.dates.map(this.weekOfYear).reverse()[0] -
-                            this.dates.map(this.weekOfYear)[0] +
-                            1,
-                        },
-                        (v, i) => this.dates.map(this.weekOfYear)[0] + i
-                      ),
-                      grid: true,
-                    },
-                    marks: [
-                      Plot.dotX(this.dates, {
-                        x: this.dayOfWeek,
-                        r: this.radius * 2,
-                        filter: (d) => d.today,
-                        stroke: "currentColor",
-                      }),
-                      Plot.dotX(this.dates, {
-                        x: this.dayOfWeek,
-                        r: this.radius,
-                        fill: null,
-                        stroke: "currentColor",
-                        title: this.formattedDate,
-                        filter: (d) => !d.didHabit,
-                      }),
-                      Plot.dotX(this.dates, {
-                        x: this.dayOfWeek,
-                        r: this.radius,
-                        fill: "currentColor",
-                        stroke: null,
-                        title: this.formattedDate,
-                        filter: (d) => d.didHabit,
-                      }),
-                    ],
-                  })
-                );
-              }
-            }
-          );
-        </script>
       </main>
 
       <footer>
