@@ -55,7 +55,9 @@
       data-domain="emailaddress.horse"
       src="https://stats.emailaddress.horse/js/index.js"
     ></script>
-    {% endif %}
+    {% endif %} {% if page.js_includes %} {% for path in page.js_includes %}
+    <script src="assets/js/{{ path }}" type="module"></script>
+    {% endfor %} {% endif %}
   </head>
   <body class="fill horse | measure-wide crimson-pro c-black bg-white p-blue">
     <div class="cover | center | measure-normal">
