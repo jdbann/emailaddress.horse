@@ -37,3 +37,9 @@ figcaption {
   font-style: italic;
   text-align: center;
 }
+
+blockquote {
+  border-left: var(--space-3xs) solid var(--color-primary);
+  padding-left: var(--space-xs);
+  font-style: italic;
+}
