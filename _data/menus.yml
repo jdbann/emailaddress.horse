@@ -1,5 +1,5 @@
 ---
 footer:
-- url: https://twitter.com/jdbannister
-  title: "@jdbannister"
-  weight: 1
+  - url: https://twitter.com/jdbannister
+    title: "@jdbannister"
+    weight: 1
