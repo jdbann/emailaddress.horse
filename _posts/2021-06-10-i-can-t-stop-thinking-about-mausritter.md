@@ -1,5 +1,5 @@
 ---
-date: 2021-06-10 20:58:16 +0100
+date: 2021-06-10T20:58:16.000+01:00
 title: I can’t stop thinking about Mausritter
 games:
 - _games/mausritter.md
