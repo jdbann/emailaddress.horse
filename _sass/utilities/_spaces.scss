@@ -1,4 +1,6 @@
-$space-rules: ();
+$space-rules: (
+  pr: padding-right
+);
 
 @each $class-name, $rule in $space-rules {
   @each $space-name, $value in $space-map {

@@ -3,8 +3,6 @@ title: Habits
 menu:
   header:
     weight: 3
-js_includes:
-  - habit-chart.js
 ---
 
 <p>
@@ -16,15 +14,48 @@ js_includes:
 {% for habit in site.habits %}
 <h2>{{ habit.title }}</h2>
 
-<figure
-  data-controller="habit-chart"
-  data-habit-chart-dates-value="{{ habit.occurrences | map: 'date' | jsonify | xml_escape }}"
->
-  <div data-habit-chart-target="jsMessage">
-    Javascript is required to view this chart. You might have javascript
-    disabled, or there could have been a problem loading the files. Sorry!
+<figure>
+  <div class="habit-chart">
+    {% assign habit_weeks = habit.occurrences | habits_by_week %} {% for
+    habit_week in habit_weeks %}
+    <div class="habit-chart--week-label | pr-xs">{{ habit_week[0] }}</div>
+
+    {% assign habit_days = habit_week[1] %} {% for habit_day in habit_days %}
+    <div
+      class="habit-chart--day"
+      {%
+      if
+      habit_day.tracked
+      %}data-tracked
+      title="{{ habit_day.date | date_to_long_string: "ordinal" }}"
+      {%
+      endif
+      %}
+      {%
+      if
+      habit_day.today
+      %}data-today{%
+      endif
+      %}
+      {%
+      if
+      habit_day.did_habit
+      %}data-did-habit{%
+      endif
+      %}
+    ></div>
+    {% endfor %} {% endfor %}
+
+    <div></div>
+    <div class="habit-chart--day-label">Mon</div>
+    <div class="habit-chart--day-label">Tue</div>
+    <div class="habit-chart--day-label">Wed</div>
+    <div class="habit-chart--day-label">Thu</div>
+    <div class="habit-chart--day-label">Fri</div>
+    <div class="habit-chart--day-label">Sat</div>
+    <div class="habit-chart--day-label">Sun</div>
   </div>
-  <div data-habit-chart-target="chart"></div>
+
   <figcaption>{{ habit.caption }}</figcaption>
 </figure>
 

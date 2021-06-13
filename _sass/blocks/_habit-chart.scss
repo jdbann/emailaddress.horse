@@ -1,0 +1,60 @@
+.habit-chart {
+  display: grid;
+  grid-template-columns: auto repeat(7, 1fr);
+}
+
+$dot-inner: 25%;
+$dot-outer: 35%;
+$ring-inner: 55%;
+$ring-outer: 65%;
+
+$grid-inner: 0;
+$grid-outer: 1px;
+
+$vertical-grid-gradient: linear-gradient(to bottom, $color-transparent $grid-inner, $color-grey-20 $grid-inner, $color-grey-20 $grid-outer, $color-transparent $grid-outer);
+$horizontal-grid-gradient: linear-gradient(to right, $color-transparent $grid-inner, $color-grey-20 $grid-inner, $color-grey-20 $grid-outer, $color-transparent $grid-outer);
+$vertical-tick-gradient: linear-gradient(to right, $color-transparent $grid-inner, currentColor $grid-inner, currentColor $grid-outer, $color-transparent $grid-outer);
+
+$have-not-completed-gradient: radial-gradient(closest-side circle, $color-transparent $dot-inner, currentColor $dot-inner, currentColor $dot-outer, $color-transparent $dot-outer);
+$have-completed-gradient: radial-gradient(closest-side circle, currentColor $dot-outer, $color-transparent $dot-outer);
+$today-gradient: radial-gradient(closest-side circle, $color-transparent $ring-inner, currentColor $ring-inner, currentColor $ring-outer, $color-transparent $ring-outer);
+
+.habit-chart--day {
+  background: $horizontal-grid-gradient, $vertical-grid-gradient;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1px 100%, 100% 1px;
+
+  &[data-tracked] {
+    background-image: $have-not-completed-gradient, $horizontal-grid-gradient, $vertical-grid-gradient;
+    background-size: contain, 1px 100%, 100% 1px;
+  }
+
+  &[data-today] {
+    background-image: $have-not-completed-gradient, $today-gradient, $horizontal-grid-gradient, $vertical-grid-gradient;
+    background-size: contain, contain, 1px 100%, 100% 1px;
+  }
+
+  &[data-did-habit] {
+    background-image: $have-completed-gradient, $horizontal-grid-gradient, $vertical-grid-gradient;
+    background-size: contain, 1px 100%, 100% 1px;
+  }
+
+  &[data-did-habit][data-today] {
+    background-image: $have-completed-gradient, $today-gradient, $horizontal-grid-gradient, $vertical-grid-gradient;
+    background-size: contain, contain, 1px 100%, 100% 1px;
+  }
+}
+
+.habit-chart--week-label {
+  text-align: right;
+}
+
+.habit-chart--day-label {
+  background-image: $vertical-tick-gradient;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 1px var(--space-3xs);
+  padding-top: var(--space-3xs);
+  text-align: center;
+}
