@@ -9,6 +9,14 @@ menu:
 Thanks for taking an interest! I've started running a book club on Discord. We
 read and discuss indie RPGs (and become the bestest of friends).
 
+In our first session, we discussed [Cairn](https://cairnrpg.com) and it was so
+great to hear such a range of experiences in gaming. A small group of players,
+GMs, creators and writers brought up some interesting details about emergent
+mechanics and influences.
+
+I'm biased of course, but I think it was great and that you'd have a great time
+if you joined in!
+
 ## What’s the main idea?
 
 Games are fun. They’re also interesting. Let’s talk about what we find fun or
