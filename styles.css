@@ -201,6 +201,40 @@ blockquote { border-left: var(--space-3xs) solid var(--color-primary); padding-l
 
 .size-5 { font-size: var(--step-5); }
 
+.pr-3xs { padding-right: var(--space-3xs); }
+
+.pr-2xs { padding-right: var(--space-2xs); }
+
+.pr-xs { padding-right: var(--space-xs); }
+
+.pr-s { padding-right: var(--space-s); }
+
+.pr-m { padding-right: var(--space-m); }
+
+.pr-l { padding-right: var(--space-l); }
+
+.pr-xl { padding-right: var(--space-xl); }
+
+.pr-2xl { padding-right: var(--space-2xl); }
+
+.pr-3xl { padding-right: var(--space-3xl); }
+
+.habit-chart { display: grid; grid-template-columns: auto repeat(7, 1fr); }
+
+.habit-chart--day { background: linear-gradient(to right, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px), linear-gradient(to bottom, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px); background-position: center; background-repeat: no-repeat; background-size: 1px 100%, 100% 1px; }
+
+.habit-chart--day[data-tracked] { background-image: radial-gradient(closest-side circle, #fff0 25%, currentColor 25%, currentColor 35%, #fff0 35%), linear-gradient(to right, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px), linear-gradient(to bottom, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px); background-size: contain, 1px 100%, 100% 1px; }
+
+.habit-chart--day[data-today] { background-image: radial-gradient(closest-side circle, #fff0 25%, currentColor 25%, currentColor 35%, #fff0 35%), radial-gradient(closest-side circle, #fff0 55%, currentColor 55%, currentColor 65%, #fff0 65%), linear-gradient(to right, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px), linear-gradient(to bottom, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px); background-size: contain, contain, 1px 100%, 100% 1px; }
+
+.habit-chart--day[data-did-habit] { background-image: radial-gradient(closest-side circle, currentColor 35%, #fff0 35%), linear-gradient(to right, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px), linear-gradient(to bottom, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px); background-size: contain, 1px 100%, 100% 1px; }
+
+.habit-chart--day[data-did-habit][data-today] { background-image: radial-gradient(closest-side circle, currentColor 35%, #fff0 35%), radial-gradient(closest-side circle, #fff0 55%, currentColor 55%, currentColor 65%, #fff0 65%), linear-gradient(to right, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px), linear-gradient(to bottom, #fff0 0, #5c5c5c33 0, #5c5c5c33 1px, #fff0 1px); background-size: contain, contain, 1px 100%, 100% 1px; }
+
+.habit-chart--week-label { text-align: right; }
+
+.habit-chart--day-label { background-image: linear-gradient(to right, #fff0 0, currentColor 0, currentColor 1px, #fff0 1px); background-position: top center; background-repeat: no-repeat; background-size: 1px var(--space-3xs); padding-top: var(--space-3xs); text-align: center; }
+
 .horse { background-image: url("assets/imgs/horse.png"); background-position: bottom var(--space-m) right var(--space-m); background-repeat: no-repeat; background-size: calc(min(100vw, 600px) - var(--space-m) * 2); background-attachment: fixed; }
 
 /*# sourceMappingURL=styles.css.map */

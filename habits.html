@@ -54,8 +54,6 @@
       data-domain="emailaddress.horse"
       src="https://stats.emailaddress.horse/js/index.js"
     ></script>
-
-    <script src="assets/js/habit-chart.js" type="module"></script>
   </head>
   <body class="fill horse | measure-wide crimson-pro c-black bg-white p-blue">
     <div class="cover | center | measure-normal">
@@ -90,16 +88,60 @@
 
         <h2>Meditation</h2>
 
-        <figure
-          data-controller="habit-chart"
-          data-habit-chart-dates-value='["2021-06-13","2021-06-12","2021-06-11","2021-06-10","2021-06-09"]'
-        >
-          <div data-habit-chart-target="jsMessage">
-            Javascript is required to view this chart. You might have javascript
-            disabled, or there could have been a problem loading the files.
-            Sorry!
+        <figure>
+          <div class="habit-chart">
+            <div class="habit-chart--week-label | pr-xs">23</div>
+
+            <div class="habit-chart--day"></div>
+
+            <div class="habit-chart--day"></div>
+
+            <div
+              class="habit-chart--day"
+              data-tracked
+              title="9th June 2021"
+              data-did-habit
+            ></div>
+
+            <div
+              class="habit-chart--day"
+              data-tracked
+              title="10th June 2021"
+              data-did-habit
+            ></div>
+
+            <div
+              class="habit-chart--day"
+              data-tracked
+              title="11th June 2021"
+              data-did-habit
+            ></div>
+
+            <div
+              class="habit-chart--day"
+              data-tracked
+              title="12th June 2021"
+              data-did-habit
+            ></div>
+
+            <div
+              class="habit-chart--day"
+              data-tracked
+              title="13th June 2021"
+              data-today
+              data-did-habit
+            ></div>
+
+            <div></div>
+            <div class="habit-chart--day-label">Mon</div>
+            <div class="habit-chart--day-label">Tue</div>
+            <div class="habit-chart--day-label">Wed</div>
+            <div class="habit-chart--day-label">Thu</div>
+            <div class="habit-chart--day-label">Fri</div>
+            <div class="habit-chart--day-label">Sat</div>
+            <div class="habit-chart--day-label">Sun</div>
           </div>
-          <div data-habit-chart-target="chart"></div>
+
           <figcaption>
             The days John has meditated, grouped by weeks of the year.
           </figcaption>
