@@ -10,15 +10,7 @@
       type="text/css"
       href="{{ 'styles.css' | relative_url }}"
     />
-    {% include icons.html %} {% include social_metadata.html %} {% if
-    jekyll.environment == "production" %}
-    <script
-      async
-      defer
-      data-domain="emailaddress.horse"
-      src="https://stats.emailaddress.horse/js/index.js"
-    ></script>
-    {% endif %}
+    {% include icons.html %} {% include analytics.html %}
   </head>
   <body class="fill horse | measure-wide crimson-pro c-black bg-white p-blue">
     <div class="cover | center | measure-normal">

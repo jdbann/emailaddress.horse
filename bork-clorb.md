@@ -1,6 +1,6 @@
 ---
 title: So you hord about Börk Clorb…
-description: A book club for indie RPGs, and you're definitely invited!
+excerpt: A book club for indie RPGs, and you're definitely invited!
 menu:
   header:
     title: Börk Clorb
