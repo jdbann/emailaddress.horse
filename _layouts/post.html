@@ -7,7 +7,7 @@ layout: default
   <small> {{ page.date | date_to_long_string: "ordinal" }} </small>
 </header>
 
-{{ content }} {% if page.games %}
+{{ content }} {% if page.games != empty %}
 <footer class="c-grey p-grey">
   <small>
     Referenced games: {% for path in page.games %} {% assign game = site.games |
