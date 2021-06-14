@@ -31,5 +31,5 @@ description: John Bannister's personal website, with thoughts on indie RPGs and 
 author: John Bannister
 permalink: "/:collection/:title"
 locale: en_GB
-avatar: assets/imgs/horse-white.jpg
+avatar: assets/imgs/horse-social.jpg
 twitter: jdbannister
