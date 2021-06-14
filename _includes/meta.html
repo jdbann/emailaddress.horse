@@ -15,11 +15,11 @@
 />
 <meta
   property="og:url"
-  content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+  content="{{ page.url | replace:'index.html','' | absolute_url }}"
 />
 <meta
   property="og:image"
-  content="{% if page.feature-img %}{{ page.feature-img | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.url }}/img/{{ site.avatar }}{% endif %}"
+  content="{% if page.feature-img %}{{ page.feature-img | absolute_url }}{% else %}{{ site.url }}{{ site.avatar }}{% endif %}"
 />
 <meta
   property="og:description"
@@ -36,7 +36,7 @@
 {% for post in site.related_posts limit:3 %}
 <meta
   property="og:see_also"
-  content="{{ post.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+  content="{{ post.url | replace:'index.html','' | absolute_url }}"
 />
 {% endfor %} {% endif %}
 <meta name="twitter:card" content="summary_large_image" />
@@ -52,5 +52,5 @@
 />
 <meta
   name="twitter:image"
-  content="{% if page.feature-img %}{{ page.feature-img | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.url }}/img/{{ site.avatar }}{% endif %}"
+  content="{% if page.feature-img %}{{ page.feature-img | absolute_url }}{% else %}{{ site.avatar | absolute_url }}{% endif %}"
 />
