@@ -27,6 +27,6 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-menus
-description: John Bannister's personal website.
+description: John Bannister's personal website, with thoughts on indie RPGs and web development.
 author: John Bannister
 permalink: "/:collection/:title"

@@ -1,0 +1,8 @@
+<meta charset="UTF-8" />
+<meta
+  name="description"
+  content="{% if page.description %}{{ page.description }}{% elsif page.excerpt
+  %}{{ page.excerpt | strip_html | normalize_whitespace }}{% else %}{{ site.description }}{% endif %}"
+/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% feed_meta %}
