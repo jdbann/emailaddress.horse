@@ -30,3 +30,6 @@ plugins:
 description: John Bannister's personal website, with thoughts on indie RPGs and web development.
 author: John Bannister
 permalink: "/:collection/:title"
+locale: en_GB
+avatar: assets/imgs/horse.png
+twitter: jdbannister

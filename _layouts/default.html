@@ -10,7 +10,8 @@
       type="text/css"
       href="{{ 'styles.css' | relative_url }}"
     />
-    {% include icons.html %} {% if jekyll.environment == "production" %}
+    {% include icons.html %} {% include social_metadata.html %} {% if
+    jekyll.environment == "production" %}
     <script
       async
       defer
