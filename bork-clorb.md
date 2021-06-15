@@ -5,8 +5,8 @@ menu:
   header:
     title: Börk Clorb
     weight: 4
----
 
+---
 Thanks for taking an interest! I've started running a book club on Discord. We
 read and discuss indie RPGs (and become the bestest of friends).
 
@@ -67,4 +67,3 @@ If anything about this still sounds a bit daunting remember:
 ## Okay, count me in
 
 Great! Join in on Discord with this link: [https://discord.gg/QgPnFmBRA3](https://discord.gg/QgPnFmBRA3)
-
