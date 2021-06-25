@@ -2,6 +2,7 @@
 title: Meditation
 caption: The days John has meditated, grouped by weeks of the year.
 occurrences:
+- date: 2021-06-25
 - date: 2021-06-24
 - date: 2021-06-23
 - date: 2021-06-22
