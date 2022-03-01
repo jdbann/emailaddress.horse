@@ -5,12 +5,12 @@ import Button from "./Button";
 
 const ThemeSwitcher: React.FC<React.HTMLProps<HTMLButtonElement>> = (props) => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
-  const darkMode = theme == "dark";
+  const darkMode = resolvedTheme == "dark";
   const toggleTheme = () => setTheme(darkMode ? "light" : "dark");
 
   return (
