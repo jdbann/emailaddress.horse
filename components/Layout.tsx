@@ -1,15 +1,14 @@
 import Head from "next/head";
 import React from "react";
-import { styled } from "../stitches.config";
+import Container from "./composition/Container";
 
 import Nav from "./Nav";
 
 type LayoutProps = {
-  className?: string;
   title?: string;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children, className, title }) => {
+const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
     <>
       <Head>
@@ -18,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className, title }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={className}>
+      <Container>
         <header>
           <Nav.Root>
             <Nav.Link href="/">emailaddress.horse</Nav.Link>
@@ -35,11 +34,9 @@ const Layout: React.FC<LayoutProps> = ({ children, className, title }) => {
             </Nav.Link>
           </Nav.Root>
         </footer>
-      </div>
+      </Container>
     </>
   );
 };
 
-export default styled(Layout, {
-  width: "$measure",
-});
+export default Layout;
