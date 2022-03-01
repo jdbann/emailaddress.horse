@@ -1,3 +1,8 @@
+import type {
+  StyledComponentProps,
+  StyledComponentType,
+} from "@stitches/react/types/styled-component";
+import React from "react";
 import { styled } from "../stitches.config";
 import Flow from "./composition/Flow";
 
@@ -15,7 +20,11 @@ export default styled(Flow, {
   },
 });
 
-export const ArticleHeader = styled(Flow, {
+const ArticleHeader: StyledComponentType<[React.FC]> = (
+  props: StyledComponentProps<["header"]>
+) => <Flow as="header" {...props} />;
+
+const StyledArticleHeader = styled(ArticleHeader, {
   h1: {
     marginBottom: "$4",
     fontSize: "$6xl",
@@ -30,3 +39,5 @@ export const ArticleHeader = styled(Flow, {
     fontWeight: "$light",
   },
 });
+
+export { StyledArticleHeader as ArticleHeader };
