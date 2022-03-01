@@ -39,6 +39,19 @@ export default styled(Cluster, {
       column: {
         flexDirection: "column",
       },
+      row: {
+        flexDirection: "row",
+      },
     },
+    spaced: {
+      true: {
+        justifyContent: "space-between",
+      },
+    },
+  },
+
+  defaultVariants: {
+    direction: "row",
+    spaced: false,
   },
 });

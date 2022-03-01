@@ -10,9 +10,11 @@ const globalStyles = globalCss({
     transition: "none",
   },
 
-  html: {
+  "*": {
     fontFamily: "$serif",
     fontVariationSettings: '"WONK" 1,"SOFT" 100',
+    transitionProperty: "all",
+    transition: "$quick",
   },
   body: {
     backgroundColor: "$blue2",
@@ -20,7 +22,6 @@ const globalStyles = globalCss({
   },
   a: {
     color: "inherit",
-    transition: "$quick",
   },
 });
 
@@ -31,7 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       defaultTheme="system"
       attribute="class"
       value={{ dark: darkTheme }}
-      disableTransitionOnChange
     >
       <Component {...pageProps} />
     </ThemeProvider>

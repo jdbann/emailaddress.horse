@@ -114,9 +114,13 @@ export const {
       "5xl": "64rem",
       "6xl": "72rem",
       "7xl": "80rem",
+      "100": "100%",
     },
     transitions: {
-      quick: "300ms cubic-bezier(.4,0,.2,1)",
+      quick: "all 150ms cubic-bezier(.4,0,.2,1)",
+    },
+    radii: {
+      small: "4px",
     },
   },
 });

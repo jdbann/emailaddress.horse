@@ -1,6 +1,8 @@
 import { styled } from "../../stitches.config";
 
 export default styled("div", {
+  boxSizing: "content-box",
+
   variants: {
     width: {
       measure: {

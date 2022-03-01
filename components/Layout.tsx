@@ -4,6 +4,7 @@ import Cluster from "./composition/Cluster";
 import Container from "./composition/Container";
 
 import * as Nav from "./Nav";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 type LayoutProps = {
   title?: string;
@@ -26,12 +27,14 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
           direction="column"
           css={{ gap: "$32" }}
         >
-          <header>
+          <Cluster as="header" spaced css={{ width: "$100" }}>
             <Nav.Root>
               <Nav.Link href="/">emailaddress.horse</Nav.Link>
               <Nav.Link href="/scraps">Scraps</Nav.Link>
             </Nav.Root>
-          </header>
+
+            <ThemeSwitcher />
+          </Cluster>
 
           <main>{children}</main>
 
