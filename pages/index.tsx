@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
+import Article, { ArticleHeader } from "../components/Article";
 
 import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <article>
-        <header>
+      <Article>
+        <ArticleHeader>
           <h1>
             email
             <wbr />
@@ -14,8 +15,8 @@ const Home: NextPage = () => {
             <wbr />
             .horse
           </h1>
-          <span>John Bannister's assorted nonsense</span>
-        </header>
+          <small>John Bannister's assorted nonsense</small>
+        </ArticleHeader>
 
         <p>
           Hi! I&apos;m John Bannister. Or{" "}
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
           </a>{" "}
           last year.
         </p>
-      </article>
+      </Article>
     </Layout>
   );
 };

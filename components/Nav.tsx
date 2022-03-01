@@ -9,7 +9,7 @@ const Root: React.FC<React.HTMLProps<HTMLElement>> = ({
 }) => {
   return (
     <nav {...props}>
-      <Cluster children={children} />
+      <Cluster asList children={children} />
     </nav>
   );
 };
@@ -17,17 +17,29 @@ const Root: React.FC<React.HTMLProps<HTMLElement>> = ({
 const StyledRoot = styled(Root, {});
 
 type LinkProps = {
+  className?: string;
   href: string;
 };
 
-const Link: React.FC<LinkProps> = ({ href, children }) => {
+const Link: React.FC<LinkProps> = ({ className, href, children }) => {
   return (
     <NextLink href={href}>
-      <a>{children}</a>
+      <a className={className}>{children}</a>
     </NextLink>
   );
 };
 
-const StyledLink = styled(Link, {});
+const StyledLink = styled(Link, {
+  color: "$slate11",
+  fontWeight: "$light",
+  textDecoration: "none",
+  fontSize: "$xl",
+  letterSpacing: ".025em",
+  lineHeight: "$normal",
+
+  "&:hover": {
+    color: "$slate12",
+  },
+});
 
 export default { Root: StyledRoot, Link: StyledLink };
