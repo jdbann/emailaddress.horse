@@ -1,6 +1,4 @@
 import type { AppProps } from "next/app";
-import "@fontsource/fraunces/variable-full.css";
-import "@fontsource/fraunces/variable-full-italic.css";
 import { darkTheme, globalCss, theme } from "../stitches.config";
 import "modern-css-reset";
 import { ThemeProvider } from "next-themes";
