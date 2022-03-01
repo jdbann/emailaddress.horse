@@ -19,25 +19,29 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
       </Head>
 
       <Container width="6xl" centre>
-        <Container width="measure" padding>
-          <Cluster direction="column" css={{ gap: "$32" }}>
-            <header>
-              <Nav.Root>
-                <Nav.Link href="/">emailaddress.horse</Nav.Link>
-                <Nav.Link href="/scraps">Scraps</Nav.Link>
-              </Nav.Root>
-            </header>
+        <Container
+          width="measure"
+          padding
+          as={Cluster}
+          direction="column"
+          css={{ gap: "$32" }}
+        >
+          <header>
+            <Nav.Root>
+              <Nav.Link href="/">emailaddress.horse</Nav.Link>
+              <Nav.Link href="/scraps">Scraps</Nav.Link>
+            </Nav.Root>
+          </header>
 
-            <main>{children}</main>
+          <main>{children}</main>
 
-            <footer>
-              <Nav.Root>
-                <Nav.Link href="https://twitter.com/jdbannister">
-                  @jdbannister
-                </Nav.Link>
-              </Nav.Root>
-            </footer>
-          </Cluster>
+          <footer>
+            <Nav.Root>
+              <Nav.Link href="https://twitter.com/jdbannister">
+                @jdbannister
+              </Nav.Link>
+            </Nav.Root>
+          </footer>
         </Container>
       </Container>
     </>
