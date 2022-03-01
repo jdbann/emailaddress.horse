@@ -7,6 +7,10 @@ const globalStyles = globalCss({
   html: {
     fontFamily: "FrauncesVariable",
   },
+  body: {
+    backgroundColor: "$blue1",
+    color: "$blue12",
+  },
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
