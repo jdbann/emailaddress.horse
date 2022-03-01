@@ -1,8 +1,9 @@
 import type { AppProps } from "next/app";
 import "@fontsource/fraunces/variable-full.css";
 import "@fontsource/fraunces/variable-full-italic.css";
-import { globalCss } from "../stitches.config";
+import { darkTheme, globalCss } from "../stitches.config";
 import "modern-css-reset";
+import { ThemeProvider } from "next-themes";
 
 const globalStyles = globalCss({
   "@media (prefers-reduced-motion)": {
@@ -14,7 +15,7 @@ const globalStyles = globalCss({
     fontVariationSettings: '"WONK" 1,"SOFT" 100',
   },
   body: {
-    backgroundColor: "$blue1",
+    backgroundColor: "$blue2",
     color: "$blue12",
   },
   a: {
@@ -25,7 +26,16 @@ const globalStyles = globalCss({
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider
+      defaultTheme="system"
+      attribute="class"
+      value={{ dark: darkTheme }}
+      disableTransitionOnChange
+    >
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;
