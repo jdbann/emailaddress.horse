@@ -3,7 +3,7 @@ import React from "react";
 import Cluster from "./composition/Cluster";
 import Container from "./composition/Container";
 
-import Nav from "./Nav";
+import * as Nav from "./Nav";
 
 type LayoutProps = {
   title?: string;

@@ -8,7 +8,9 @@ const Scraps: NextPage = () => {
       <Article>
         <ArticleHeader>
           <h1>Scraps</h1>
-          <small>Some bits and pieces I haven't fully thought through</small>
+          <small>
+            Some bits and pieces I haven&apos;t fully thought through
+          </small>
         </ArticleHeader>
 
         <p>Nothing to see here&hellip;</p>

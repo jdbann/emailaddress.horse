@@ -9,7 +9,7 @@ const Root: React.FC<React.HTMLProps<HTMLElement>> = ({
 }) => {
   return (
     <nav {...props}>
-      <Cluster asList children={children} />
+      <Cluster asList>{children}</Cluster>
     </nav>
   );
 };
@@ -42,4 +42,4 @@ const StyledLink = styled(Link, {
   },
 });
 
-export default { Root: StyledRoot, Link: StyledLink };
+export { StyledRoot as Root, StyledLink as Link };
