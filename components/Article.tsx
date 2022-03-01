@@ -6,7 +6,11 @@ import React from "react";
 import { styled } from "../stitches.config";
 import Flow from "./composition/Flow";
 
-export default styled(Flow, {
+const Article: StyledComponentType<[React.FC]> = (
+  props: StyledComponentProps<["article"]>
+) => <Flow as="article" {...props} />;
+
+export default styled(Article, {
   color: "$slate11",
 
   p: {
