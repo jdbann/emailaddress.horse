@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import "@fontsource/fraunces/variable-full.css";
 import "@fontsource/fraunces/variable-full-italic.css";
-import { darkTheme, globalCss } from "../stitches.config";
+import { darkTheme, globalCss, theme } from "../stitches.config";
 import "modern-css-reset";
 import { ThemeProvider } from "next-themes";
 
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider
       defaultTheme="system"
       attribute="class"
-      value={{ dark: darkTheme }}
+      value={{ dark: darkTheme.toString(), light: theme.toString() }}
     >
       <Component {...pageProps} />
     </ThemeProvider>
