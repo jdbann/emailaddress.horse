@@ -30,7 +30,6 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
           <Cluster as="header" spaced css={{ width: "$100" }}>
             <Nav.Root>
               <Nav.Link href="/">emailaddress.horse</Nav.Link>
-              <Nav.Link href="/scraps">Scraps</Nav.Link>
             </Nav.Root>
 
             <ThemeSwitcher />
