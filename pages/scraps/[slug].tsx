@@ -59,6 +59,6 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
     paths: scraps.map(({ slug }: { slug: string }) => ({
       params: { slug },
     })),
-    fallback: true,
+    fallback: false,
   };
 }
