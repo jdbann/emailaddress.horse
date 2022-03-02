@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { darkTheme, globalCss, theme } from "../stitches.config";
 import "modern-css-reset";
 import { ThemeProvider } from "next-themes";
+import Head from "next/head";
 
 const globalStyles = globalCss({
   "@media (prefers-reduced-motion)": {
@@ -38,6 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       attribute="class"
       value={{ dark: darkTheme.toString(), light: theme.toString() }}
     >
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Component {...pageProps} />
     </ThemeProvider>
   );
