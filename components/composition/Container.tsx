@@ -6,10 +6,10 @@ export default styled("div", {
   variants: {
     width: {
       measure: {
-        width: "$measure",
+        maxWidth: "$measure",
       },
       "6xl": {
-        width: "$6xl",
+        maxWidth: "$6xl",
       },
     },
     centre: {
