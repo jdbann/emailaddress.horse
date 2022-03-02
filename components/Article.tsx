@@ -17,6 +17,7 @@ export default styled(Article, {
     fontWeight: "$light",
     fontSize: "$xl",
     color: "$slate11",
+    lineHeight: "$relaxed",
   },
 
   a: {
