@@ -37,6 +37,18 @@ const StyledLink = styled("a", {
   },
 });
 
+const isPathDescendant = (
+  pathToCheck: string,
+  pathToMatch: string
+): boolean => {
+  switch (pathToCheck) {
+    case "/":
+      return pathToCheck === pathToMatch;
+    default:
+      return pathToMatch.startsWith(pathToCheck);
+  }
+};
+
 type LinkProps = {
   className?: string;
   href: string;
@@ -47,7 +59,9 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
 
   return (
     <NextLink href={href} passHref>
-      <StyledLink active={router.asPath == href}>{children}</StyledLink>
+      <StyledLink active={isPathDescendant(href, router.asPath)}>
+        {children}
+      </StyledLink>
     </NextLink>
   );
 };

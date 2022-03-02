@@ -15,7 +15,7 @@ const Home: NextPage = () => {
             <wbr />
             .horse
           </h1>
-          <small>John Bannister&apos;s assorted nonsense</small>
+          <small>John Bannister&apos;s assorted nonsense.</small>
         </ArticleHeader>
 
         <p>
