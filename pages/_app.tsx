@@ -20,6 +20,13 @@ const globalStyles = globalCss({
   },
   a: {
     color: "inherit",
+    textUnderlineOffset: "6px",
+    textDecorationColor: "transparent",
+    textDecorationThickness: "1px",
+  },
+  "a:hover": {
+    textUnderlineOffset: "1px",
+    textDecorationColor: "$slate12",
   },
 });
 

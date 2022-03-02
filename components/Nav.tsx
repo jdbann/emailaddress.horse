@@ -20,7 +20,6 @@ const StyledRoot = styled(Root, {});
 const StyledLink = styled("a", {
   color: "$slate11",
   fontWeight: "$light",
-  textDecoration: "none",
   fontSize: "$xl",
   letterSpacing: ".025em",
   lineHeight: "$normal",
