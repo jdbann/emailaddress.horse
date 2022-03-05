@@ -6,4 +6,5 @@ export type Scrap = ScrapListing & {
 export type ScrapListing = {
   title: string;
   slug: string;
+  publishedAt: string;
 };

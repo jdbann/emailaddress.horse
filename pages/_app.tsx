@@ -17,17 +17,37 @@ const globalStyles = globalCss({
   },
   body: {
     backgroundColor: "$blue2",
-    color: "$blue12",
+    color: "$slate11",
   },
+
   a: {
-    color: "inherit",
+    color: "$slate12",
     textUnderlineOffset: "6px",
     textDecorationColor: "transparent",
     textDecorationThickness: "1px",
+
+    "&:hover": {
+      textUnderlineOffset: "1px",
+      textDecorationColor: "$slate12",
+    },
   },
-  "a:hover": {
-    textUnderlineOffset: "1px",
-    textDecorationColor: "$slate12",
+
+  "h1, h2": {
+    fontWeight: "$normal",
+    lineHeight: "$none",
+    color: "$slate12",
+  },
+  h1: {
+    fontSize: "$6xl",
+  },
+  h2: {
+    fontSize: "$3xl",
+  },
+
+  p: {
+    fontWeight: "$light",
+    fontSize: "$xl",
+    lineHeight: "$relaxed",
   },
 });
 

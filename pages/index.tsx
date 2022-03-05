@@ -1,23 +1,23 @@
 import type { NextPage } from "next";
-import Article, { ArticleHeader } from "../components/Article";
+import Article from "../components/Article";
 
 import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Article>
-        <ArticleHeader>
-          <h1>
+      <Article
+        title={
+          <>
             email
             <wbr />
             address
             <wbr />
             .horse
-          </h1>
-          <small>John Bannister&apos;s assorted nonsense.</small>
-        </ArticleHeader>
-
+          </>
+        }
+        tagline="John Bannister's assorted nonsense."
+      >
         <p>
           Hi! I&apos;m John Bannister. Or{" "}
           <a href="https://twitter.com/jdbannister">@jdbannister</a> if

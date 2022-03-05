@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Article, { ArticleHeader } from "../../components/Article";
+import Article from "../../components/Article";
 import Layout from "../../components/Layout";
+import Time from "../../components/semantic/Time";
 import { getAllScrapsForIndex } from "../../lib/graphcms";
 import type { ScrapListing } from "../../lib/scrap";
 
@@ -10,20 +11,24 @@ type ScrapsPageProps = {
 
 const ScrapsPage = ({ scraps }: ScrapsPageProps) => {
   return (
-    <Layout>
-      <Article>
-        <ArticleHeader>
-          <h1>Scraps</h1>
-          <small>Rough thoughts, hastily formed.</small>
-        </ArticleHeader>
+    <Layout title="Scraps">
+      <Article title="Scraps" tagline="Rough thoughts, hastily formed.">
+        {scraps.map(({ slug, title, publishedAt }) => {
+          const publishedAtDate = new Date(publishedAt);
 
-        {scraps.map(({ slug, title }) => (
-          <h2 key={slug}>
-            <Link href={`/scraps/${slug}`}>
-              <a>{title}</a>
-            </Link>
-          </h2>
-        ))}
+          return (
+            <article key={slug}>
+              <h2>
+                <Link href={`/scraps/${slug}`}>
+                  <a>{title}</a>
+                </Link>
+              </h2>
+              <p>
+                <Time dateTime={publishedAtDate} />
+              </p>
+            </article>
+          );
+        })}
       </Article>
     </Layout>
   );

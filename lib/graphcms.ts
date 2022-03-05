@@ -36,6 +36,7 @@ export async function getAllScrapsForIndex(): Promise<ScrapListing[]> {
     scraps {
       title
       slug
+      publishedAt
     }
   }
   `);
@@ -61,6 +62,7 @@ export async function getScrap(slug: string, preview: boolean): Promise<Scrap> {
             title
             slug
             body
+            publishedAt
           }
         }
       `,
