@@ -76,3 +76,22 @@ export async function getScrap(slug: string, preview: boolean): Promise<Scrap> {
   );
   return data.scrap;
 }
+
+export async function getPreviewScrapBySlug(slug: string) {
+  const data = await fetchAPI(
+    `
+    query ScrapBySlug($slug: String!, $stage: Stage!) {
+      scrap(where: {slug: $slug}, stage: $stage) {
+        slug
+      }
+    }`,
+    {
+      preview: true,
+      variables: {
+        stage: "DRAFT",
+        slug,
+      },
+    }
+  );
+  return data.scrap;
+}
