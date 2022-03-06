@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>{title && `${title} - `}emailaddress.horse</title>
+        <title>{title ? `${title} - ` : ""}emailaddress.horse</title>
         <meta name="description" content="John Bannister's assorted nonsense" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
