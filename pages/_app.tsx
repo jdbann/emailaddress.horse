@@ -3,6 +3,7 @@ import { darkTheme, globalCss, theme } from "../stitches.config";
 import "modern-css-reset";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
+import PlausibleProvider from "next-plausible";
 
 const globalStyles = globalCss({
   "@media (prefers-reduced-motion)": {
@@ -51,16 +52,22 @@ const globalStyles = globalCss({
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
   return (
-    <ThemeProvider
-      defaultTheme="system"
-      attribute="class"
-      value={{ dark: darkTheme.toString(), light: theme.toString() }}
+    <PlausibleProvider
+      domain="emailaddress.horse"
+      customDomain="https://stats.emailaddress.horse"
+      trackOutboundLinks
     >
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <Component {...pageProps} />
-    </ThemeProvider>
+      <ThemeProvider
+        defaultTheme="system"
+        attribute="class"
+        value={{ dark: darkTheme.toString(), light: theme.toString() }}
+      >
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </PlausibleProvider>
   );
 }
 
