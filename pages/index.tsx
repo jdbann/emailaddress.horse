@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout title={false}>
       <Article
         title={
           <>

@@ -7,7 +7,7 @@ import * as Nav from "./Nav";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 type LayoutProps = {
-  title?: string;
+  title: string | false;
 };
 
 const Layout: React.FC<LayoutProps> = ({ children, title }) => {

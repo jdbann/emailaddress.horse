@@ -16,7 +16,7 @@ const ScrapPage: NextPage<ScrapPageProps> = ({ scrap }) => {
   const publishedAtDate = new Date(scrap.publishedAt);
 
   return (
-    <Layout>
+    <Layout title={scrap.title}>
       <Article
         title={scrap.title}
         tagline={<Time dateTime={publishedAtDate} />}
