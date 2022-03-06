@@ -18,6 +18,9 @@ const globalStyles = globalCss({
   body: {
     backgroundColor: "$blue2",
     color: "$slate11",
+    fontWeight: "$light",
+    fontSize: "$xl",
+    lineHeight: "$relaxed",
   },
 
   a: {
@@ -42,12 +45,6 @@ const globalStyles = globalCss({
   },
   h2: {
     fontSize: "$3xl",
-  },
-
-  p: {
-    fontWeight: "$light",
-    fontSize: "$xl",
-    lineHeight: "$relaxed",
   },
 });
 

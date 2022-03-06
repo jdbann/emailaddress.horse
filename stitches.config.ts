@@ -102,7 +102,7 @@ export const {
       96: "24rem",
     },
     sizes: {
-      measure: "65ch",
+      measure: "55ch",
       xs: "20rem",
       sm: "24rem",
       md: "28rem",

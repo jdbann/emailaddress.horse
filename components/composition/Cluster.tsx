@@ -13,7 +13,7 @@ const Cluster: React.FC<ClusterProps> = ({
 }) => {
   if (asList) {
     return (
-      <ul className={className}>
+      <ul className={className} role="list">
         {React.Children.map(children, (child, index) => {
           return <li key={index}>{child}</li>;
         })}
@@ -29,10 +29,6 @@ export default styled(Cluster, {
   margin: "$0",
   padding: "$0",
   gap: "$4",
-
-  "& li": {
-    listStyle: "none",
-  },
 
   variants: {
     direction: {
