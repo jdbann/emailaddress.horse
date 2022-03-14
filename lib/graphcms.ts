@@ -33,7 +33,7 @@ async function fetchAPI(
 export async function getAllScrapsForIndex(): Promise<ScrapListing[]> {
   const data = await fetchAPI(`
   {
-    scraps {
+    scraps(orderBy: publishedAt_DESC) {
       title
       slug
       publishedAt
