@@ -1,56 +1,12 @@
 import type { AppProps } from "next/app";
-import { darkTheme, globalCss, theme } from "../stitches.config";
-import "modern-css-reset";
+import { darkTheme, globalStyles, theme } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import PlausibleProvider from "next-plausible";
 
-const globalStyles = globalCss({
-  "@media (prefers-reduced-motion)": {
-    transition: "none",
-  },
-
-  "*": {
-    fontFamily: "$serif",
-    fontVariationSettings: '"WONK" 1,"SOFT" 100',
-    transitionProperty: "all",
-    transition: "$quick",
-  },
-  body: {
-    backgroundColor: "$blue2",
-    color: "$slate11",
-    fontWeight: "$light",
-    fontSize: "$xl",
-    lineHeight: "$relaxed",
-  },
-
-  a: {
-    color: "$slate12",
-    textUnderlineOffset: "6px",
-    textDecorationColor: "transparent",
-    textDecorationThickness: "1px",
-
-    "&:hover": {
-      textUnderlineOffset: "1px",
-      textDecorationColor: "$slate12",
-    },
-  },
-
-  "h1, h2": {
-    fontWeight: "$normal",
-    lineHeight: "$none",
-    color: "$slate12",
-  },
-  h1: {
-    fontSize: "$6xl",
-  },
-  h2: {
-    fontSize: "$3xl",
-  },
-});
-
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
+
   return (
     <PlausibleProvider
       domain="emailaddress.horse"
