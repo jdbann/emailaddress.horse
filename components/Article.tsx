@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "../stitches.config";
 import Flow from "./composition/Flow";
+import Prose from "./Prose";
 
 type ArticleProps = {
   title: string | React.ReactElement;
@@ -24,7 +25,7 @@ const Article: React.FC<ArticleProps> = ({ title, tagline, children }) => (
       {tagline && <p>{tagline}</p>}
     </Flow>
 
-    {children}
+    <Prose>{children}</Prose>
   </Flow>
 );
 
