@@ -5,8 +5,9 @@ import React from "react";
 import Article from "../../components/Article";
 import Layout from "../../components/Layout";
 import Time from "../../components/semantic/Time";
-import { getAllScrapsWithSlug, getScrap } from "../../lib/graphcms";
-import { Scrap } from "../../lib/scrap";
+import { getScrapBySlug, getScrapSlugs } from "../../lib/scrap";
+
+import type { Scrap } from "../../lib/scrap";
 
 type ScrapPageProps = {
   scrap: Scrap;
@@ -38,9 +39,9 @@ type ScrapPageParams = {
 };
 
 export const getStaticPaths: GetStaticPaths<ScrapPageParams> = async () => {
-  const scraps = await getAllScrapsWithSlug();
+  const slugs = getScrapSlugs();
   return {
-    paths: scraps.map(({ slug }: { slug: string }) => ({
+    paths: slugs.map((slug) => ({
       params: { slug },
     })),
     fallback: false,
@@ -50,8 +51,8 @@ export const getStaticPaths: GetStaticPaths<ScrapPageParams> = async () => {
 export const getStaticProps: GetStaticProps<
   ScrapPageProps,
   ScrapPageParams
-> = async ({ params, preview = false }) => {
-  const scrap = await getScrap(params!.slug, preview);
+> = async ({ params }) => {
+  const scrap = getScrapBySlug(params!.slug);
   const { compiledSource: parsedBody } = await serialize(scrap.body);
   return {
     props: {
