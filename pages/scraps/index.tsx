@@ -2,7 +2,8 @@ import Link from "next/link";
 import Article from "../../components/Article";
 import Layout from "../../components/Layout";
 import Time from "../../components/semantic/Time";
-import { getAllScrapsForIndex } from "../../lib/graphcms";
+import { getScrapListings } from "../../lib/scrap";
+
 import type { ScrapListing } from "../../lib/scrap";
 
 type ScrapsPageProps = {
@@ -37,6 +38,6 @@ const ScrapsPage = ({ scraps }: ScrapsPageProps) => {
 export default ScrapsPage;
 
 export async function getStaticProps(): Promise<{ props: ScrapsPageProps }> {
-  const scraps = await getAllScrapsForIndex();
+  const scraps = getScrapListings();
   return { props: { scraps } };
 }

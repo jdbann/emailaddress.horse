@@ -12,6 +12,7 @@
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-icons": "^1.1.0",
     "@stitches/react": "^1.2.7",
+    "gray-matter": "^4.0.3",
     "modern-css-reset": "^1.4.0",
     "next": "12.1.0",
     "next-mdx-remote": "^4.0.0",
