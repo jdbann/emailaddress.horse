@@ -1,32 +1,28 @@
 import React from "react";
-import { css } from "../stitches.config";
-import Flow from "./composition/Flow";
-import Prose from "./Prose";
+import Prose, { Lead } from "./Prose";
 
 type ArticleProps = {
+  as?: string | React.ComponentType<any>;
   title: string | React.ReactElement;
   tagline?: string | React.ReactElement;
 };
 
-const Article: React.FC<ArticleProps> = ({ title, tagline, children }) => (
-  <Flow as="article">
-    <Flow
-      as="header"
-      spacing="sm"
-      css={{
-        p: {
-          fontSize: "$2xl",
-          fontStyle: "italic",
-          fontWeight: "$light",
-        },
-      }}
-    >
-      <h1>{title}</h1>
-      {tagline && <p>{tagline}</p>}
-    </Flow>
+const Article: React.FC<ArticleProps> = ({
+  as = "article",
+  title,
+  tagline,
+  children,
+}) => (
+  <Prose as={as} size="xl">
+    <h1>{title}</h1>
+    {tagline && (
+      <Lead>
+        <em>{tagline}</em>
+      </Lead>
+    )}
 
-    <Prose>{children}</Prose>
-  </Flow>
+    {children}
+  </Prose>
 );
 
 export default Article;

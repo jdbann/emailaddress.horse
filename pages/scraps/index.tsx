@@ -13,7 +13,11 @@ type ScrapsPageProps = {
 const ScrapsPage = ({ scraps }: ScrapsPageProps) => {
   return (
     <Layout title="Scraps">
-      <Article title="Scraps" tagline="Rough thoughts, hastily formed.">
+      <Article
+        as="div"
+        title="Scraps"
+        tagline="Rough thoughts, hastily formed."
+      >
         {scraps.map(({ slug, title, publishedAt }) => {
           const publishedAtDate = new Date(publishedAt);
 
