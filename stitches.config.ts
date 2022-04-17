@@ -127,6 +127,17 @@ export const darkTheme = createTheme({
     ...blueDark,
     ...slateDark,
   },
+  fontWeights: {
+    thin: "100",
+    extralight: "150",
+    light: "250",
+    normal: "325",
+    medium: "400",
+    semibold: "500",
+    bold: "600",
+    extrabold: "700",
+    black: "800",
+  },
 });
 
 export const globalStyles = globalCss({

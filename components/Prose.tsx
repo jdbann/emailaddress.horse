@@ -22,11 +22,11 @@ const Prose = styled("div", {
   a: {
     color: "var(--prose-links)",
     textDecoration: "underline",
-    fontWeight: "500",
+    fontWeight: "$medium",
   },
   strong: {
     color: "var(--prose-bold)",
-    fontWeight: "600",
+    fontWeight: "$semibold",
   },
   ol: {
     listStyleType: "decimal",
@@ -62,7 +62,7 @@ const Prose = styled("div", {
     listStyleType: "disc",
   },
   "ol > li::marker": {
-    fontWeight: "400",
+    fontWeight: "$normal",
     color: "var(--prose-counters)",
   },
   "ul > li::marker": {
@@ -73,7 +73,7 @@ const Prose = styled("div", {
     borderTopWidth: 1,
   },
   blockquote: {
-    fontWeight: "500",
+    fontWeight: "$medium",
     fontStyle: "italic",
     color: "var(--prose-quotes)",
     borderLeftWidth: "0.25rem",
@@ -88,38 +88,38 @@ const Prose = styled("div", {
   },
   h1: {
     color: "var(--prose-headings)",
-    fontWeight: "800",
+    fontWeight: "$extrabold",
   },
   "h1 strong": {
-    fontWeight: "900",
+    fontWeight: "$black",
   },
   h2: {
     color: "var(--prose-headings)",
-    fontWeight: "700",
+    fontWeight: "$bold",
   },
   "h2 strong": {
-    fontWeight: "800",
+    fontWeight: "$extrabold",
   },
   h3: {
     color: "var(--prose-headings)",
-    fontWeight: "600",
+    fontWeight: "$semibold",
   },
   "h3 strong": {
-    fontWeight: "700",
+    fontWeight: "$bold",
   },
   h4: {
     color: "var(--prose-headings)",
-    fontWeight: "600",
+    fontWeight: "$semibold",
   },
   "h4 strong": {
-    fontWeight: "700",
+    fontWeight: "$bold",
   },
   figcaption: {
     color: "var(--prose-captions)",
   },
   code: {
     color: "var(--prose-code)",
-    fontWeight: "600",
+    fontWeight: "$semibold",
   },
   "code::before": {
     content: '"`"',
@@ -134,7 +134,7 @@ const Prose = styled("div", {
     color: "var(--prose-pre-code)",
     backgroundColor: "var(--prose-pre-bg)",
     overflowX: "auto",
-    fontWeight: "400",
+    fontWeight: "$normal",
   },
   "pre code": {
     backgroundColor: "transparent",
@@ -166,7 +166,7 @@ const Prose = styled("div", {
   },
   "thead th": {
     color: "var(--prose-headings)",
-    fontWeight: "600",
+    fontWeight: "$semibold",
     verticalAlign: "bottom",
   },
   "tbody tr": {
