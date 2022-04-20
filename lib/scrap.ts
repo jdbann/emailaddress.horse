@@ -4,7 +4,10 @@ import { join } from "path";
 
 export type Scrap = ScrapListing & {
   body: string;
-  parsedBody?: string;
+};
+
+export type ParsedScrap = Scrap & {
+  parsedBody: string;
 };
 
 export type ScrapListing = {
@@ -18,6 +21,7 @@ const scrapsDirectory = join(process.cwd(), "posts");
 export function getScrapSlugs(): string[] {
   return fs
     .readdirSync(scrapsDirectory)
+    .filter((slug) => slug.match(/\.mdx?$/) !== null)
     .map((slug) => slug.replace(/\.mdx$/, ""));
 }
 
@@ -30,7 +34,7 @@ export function getScrapBySlug(slug: string): Scrap {
     body: content,
     title: data.title,
     slug: slug,
-    publishedAt: data.date.toISOString(),
+    publishedAt: data.date?.toISOString() || null,
   };
 }
 

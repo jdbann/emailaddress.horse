@@ -1,16 +1,15 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-import React from "react";
 import Article from "../../components/Article";
 import Layout from "../../components/Layout";
+import Markdown from "../../components/Markdown";
 import Time from "../../components/semantic/Time";
 import { getScrapBySlug, getScrapSlugs } from "../../lib/scrap";
+import { serialize } from "../../lib/mdx";
 
-import type { Scrap } from "../../lib/scrap";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { ParsedScrap } from "../../lib/scrap";
 
 type ScrapPageProps = {
-  scrap: Scrap;
+  scrap: ParsedScrap;
 };
 
 const ScrapPage: NextPage<ScrapPageProps> = ({ scrap }) => {
@@ -22,11 +21,7 @@ const ScrapPage: NextPage<ScrapPageProps> = ({ scrap }) => {
         title={scrap.title}
         tagline={<Time dateTime={publishedAtDate} />}
       >
-        {scrap.parsedBody ? (
-          <MDXRemote compiledSource={scrap.parsedBody} />
-        ) : (
-          <p>Content missing&hellip;</p>
-        )}
+        <Markdown compiledSource={scrap.parsedBody} />
       </Article>
     </Layout>
   );
