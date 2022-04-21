@@ -6,16 +6,31 @@ type ResponsiveImageProps = React.DetailedHTMLProps<
   HTMLImageElement
 >;
 
-const ResponsiveImage = ({ src, alt, height, width }: ResponsiveImageProps) => {
+const ResponsiveImage = ({
+  src,
+  alt,
+  height,
+  width,
+  title,
+}: ResponsiveImageProps) => {
   invariant(src, "src is required");
 
   const imageProps = {
     src,
-    alt,
     height,
     width,
   };
-  return <Image layout="responsive" {...imageProps} />;
+
+  if (title === undefined) {
+    return <Image layout="responsive" alt={alt} {...imageProps} />;
+  } else {
+    return (
+      <figure>
+        <Image layout="responsive" alt={alt} {...imageProps} />
+        <figcaption>{title}</figcaption>
+      </figure>
+    );
+  }
 };
 
 export default ResponsiveImage;
