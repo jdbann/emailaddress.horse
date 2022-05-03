@@ -8,6 +8,12 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head>
           <link
+            rel="icon"
+            href="/favicon.svg"
+            sizes="any"
+            type="image/svg+xml"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..400,1,1;1,9..144,300,1,1&display=block"
             rel="stylesheet"
           />
