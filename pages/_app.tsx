@@ -3,6 +3,7 @@ import { darkTheme, globalStyles, theme } from "../stitches.config";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import PlausibleProvider from "next-plausible";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
@@ -21,7 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <Component {...pageProps} />
+        <Layout {...pageProps.markdoc?.frontmatter}>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </PlausibleProvider>
   );
