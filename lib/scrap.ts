@@ -1,41 +1,43 @@
 import fs from "fs";
-import matter from "gray-matter";
 import { join } from "path";
-
-export type Scrap = ScrapListing & {
-  body: string;
-};
-
-export type ParsedScrap = Scrap & {
-  parsedBody: string;
-};
+import Markdoc from "@markdoc/markdoc";
+import yaml from "js-yaml";
 
 export type ScrapListing = {
-  title: string;
   slug: string;
-  publishedAt: string;
+  title?: string;
+  date?: string;
+  tagline?: string;
 };
 
-const scrapsDirectory = join(process.cwd(), "posts");
+export type Frontmatter = {
+  title?: string;
+  date?: Date;
+  tagline?: string;
+};
+
+const scrapsDirectory = join(process.cwd(), "pages/scraps");
 
 export function getScrapSlugs(): string[] {
   return fs
     .readdirSync(scrapsDirectory)
-    .filter((slug) => slug.match(/\.mdx?$/) !== null)
-    .map((slug) => slug.replace(/\.mdx$/, ""));
+    .filter((slug) => slug.match(/\.md$/) !== null)
+    .map((slug) => slug.replace(/\.md$/, ""));
 }
 
-export function getScrapBySlug(slug: string): Scrap {
-  const fullPath = join(scrapsDirectory, `${slug}.mdx`);
+export function getScrapBySlug(slug: string): ScrapListing {
+  const fullPath = join(scrapsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const ast = Markdoc.parse(fileContents);
+  const frontmatter = (
+    ast.attributes.frontmatter ? yaml.load(ast.attributes.frontmatter) : {}
+  ) as Frontmatter;
 
   return {
-    body: content,
-    title: data.title,
-    slug: slug,
-    publishedAt: data.date?.toISOString() || null,
-  };
+    slug,
+    ...frontmatter,
+    date: frontmatter.date?.toISOString(),
+  } as ScrapListing;
 }
 
 export function getScrapListings(): ScrapListing[] {
@@ -43,5 +45,5 @@ export function getScrapListings(): ScrapListing[] {
     .map((slug) => {
       return { ...getScrapBySlug(slug) };
     })
-    .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+    .sort((a, b) => (new Date(a.date || "") < new Date(b.date || "") ? 1 : -1));
 }

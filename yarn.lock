@@ -46,6 +46,18 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@markdoc/markdoc@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@markdoc/markdoc/-/markdoc-0.1.2.tgz#401c7536ed1fd33951458747d2d74f217241e142"
+  integrity sha512-3p+JTC1A0eqBdrl2UOIRoy+FLKtG1mh81R3Zzdm7FJiQIMt2mJmqmVQNDf3Md62G9rTtbj0ZuxlEattMbaslbw==
+
+"@markdoc/next.js@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@markdoc/next.js/-/next.js-0.1.4.tgz#06db461cb67d912692c7eb45249795278f788e6a"
+  integrity sha512-1da7H1c8/RZ1s02Cybh/8wHAwkyHu4ZP8ygK0nL+IK8jFO66J5UrYFIL2DCBDQy1uJSUgJdVErmLjeuK8wXHBg==
+  dependencies:
+    js-yaml "^4.1.0"
+
 "@mdx-js/mdx@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-2.0.0.tgz#7f270df1e77c46f8338fc32089016b3ea383d023"

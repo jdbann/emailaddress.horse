@@ -1,16 +1,21 @@
 import Head from "next/head";
 import React from "react";
+import Article from "./Article";
 import Cluster from "./composition/Cluster";
 import Container from "./composition/Container";
 
 import * as Nav from "./Nav";
+import Time from "./semantic/Time";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 type LayoutProps = {
-  title: string | false;
+  title?: string;
+  date?: string;
+  tagline?: string;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children, title }) => {
+const Layout: React.FC<LayoutProps> = ({ children, title, date, tagline }) => {
+  const parsedDate = date ? new Date(date) : null;
   return (
     <>
       <Head>
@@ -36,7 +41,14 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
             <ThemeSwitcher />
           </Cluster>
 
-          <main>{children}</main>
+          <main>
+            <Article
+              title={title || "emailaddress.horse"}
+              tagline={parsedDate ? <Time dateTime={parsedDate} /> : tagline}
+            >
+              {children}
+            </Article>
+          </main>
 
           <footer>
             <Nav.Root>
