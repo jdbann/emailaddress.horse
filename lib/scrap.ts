@@ -7,8 +7,9 @@ const buildStore = (): ScrapStore => {
     case 'fs':
       return new FsStore()
     case 'stable':
-    default:
       return new StableStore(process.env.STABLE_HOST)
+    default:
+      throw "No store configured on env STORE"
   }
 }
 
