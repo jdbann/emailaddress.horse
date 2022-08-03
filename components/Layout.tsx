@@ -2,7 +2,6 @@ import Head from "next/head";
 import React from "react";
 import Article from "./Article";
 import Cluster from "./composition/Cluster";
-import Container from "./composition/Container";
 
 import * as Nav from "./Nav";
 import Time from "./semantic/Time";
@@ -14,7 +13,7 @@ type LayoutProps = {
   tagline?: string;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children, title, date, tagline }) => {
+const Layout: React.FC<LayoutProps> = ({children, title, date, tagline}) => {
   const parsedDate = date ? new Date(date) : null;
   return (
     <>
@@ -24,15 +23,9 @@ const Layout: React.FC<LayoutProps> = ({ children, title, date, tagline }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container width="6xl" centre>
-        <Container
-          width="measure"
-          padding
-          as={Cluster}
-          direction="column"
-          css={{ gap: "$32" }}
-        >
-          <Cluster as="header" spaced css={{ width: "$100" }}>
+      <div className="max-w-6xl mx-auto box-content">
+        <div className="flex flex-col p-10 max-w-prose box-content gap-32">
+          <Cluster as="header" spaced css={{width: "$100"}}>
             <Nav.Root>
               <Nav.Link href="/">emailaddress.horse</Nav.Link>
               <Nav.Link href="/scraps">Scraps</Nav.Link>
@@ -57,8 +50,8 @@ const Layout: React.FC<LayoutProps> = ({ children, title, date, tagline }) => {
               </Nav.Link>
             </Nav.Root>
           </footer>
-        </Container>
-      </Container>
+        </div>
+      </div>
     </>
   );
 };
