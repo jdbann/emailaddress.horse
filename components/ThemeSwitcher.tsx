@@ -1,9 +1,8 @@
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
-import Button from "./Button";
 
-const ThemeSwitcher: React.FC<React.HTMLProps<HTMLButtonElement>> = (props) => {
+const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -14,15 +13,13 @@ const ThemeSwitcher: React.FC<React.HTMLProps<HTMLButtonElement>> = (props) => {
   const toggleTheme = () => setTheme(darkMode ? "light" : "dark");
 
   return (
-    <Button
-      css={{ "& svg": { display: "block" } }}
+    <button
+      className="p-2 rounded-sm hover:bg-slate-3 focus:bg-slate-3 focus:text-slate-12 hover:text-slate-12 text-slate-11 box-border"
       onClick={toggleTheme}
-      type="button"
-      style="ghost"
       aria-label="switch between light and dark theme"
     >
       {darkMode ? <SunIcon /> : <MoonIcon />}
-    </Button>
+    </button>
   );
 };
 
