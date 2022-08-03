@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --blue1: 206 100% 99.2%;
+    --blue2: 210 100% 98.0%;
+    --blue3: 209 100% 96.5%;
+    --blue4: 210 98.8% 94.0%;
+    --blue5: 209 95.0% 90.1%;
+    --blue6: 209 81.2% 84.5%;
+    --blue7: 208 77.5% 76.9%;
+    --blue8: 206 81.9% 65.3%;
+    --blue9: 206 100% 50.0%;
+    --blue10: 208 100% 47.3%;
+    --blue11: 211 100% 43.2%;
+    --blue12: 211 100% 15.0%;
+
+    --slate1: 206 30.0% 98.8%;
+    --slate2: 210 16.7% 97.6%;
+    --slate3: 209 13.3% 95.3%;
+    --slate4: 209 12.2% 93.2%;
+    --slate5: 208 11.7% 91.1%;
+    --slate6: 208 11.3% 88.9%;
+    --slate7: 207 11.1% 85.9%;
+    --slate8: 205 10.7% 78.0%;
+    --slate9: 206 6.0% 56.1%;
+    --slate10: 206 5.8% 52.3%;
+    --slate11: 206 6.0% 43.5%;
+    --slate12: 206 24.0% 9.0%;
+  }
+
+  .dark {
+    --blue1: 212 35.0% 9.2%;
+    --blue2: 216 50.0% 11.8%;
+    --blue3: 214 59.4% 15.3%;
+    --blue4: 214 65.8% 17.9%;
+    --blue5: 213 71.2% 20.2%;
+    --blue6: 212 77.4% 23.1%;
+    --blue7: 211 85.1% 27.4%;
+    --blue8: 211 89.7% 34.1%;
+    --blue9: 206 100% 50.0%;
+    --blue10: 209 100% 60.6%;
+    --blue11: 210 100% 66.1%;
+    --blue12: 206 98.0% 95.8%;
+
+    --slate1: 200 7.0% 8.8%;
+    --slate2: 195 7.1% 11.0%;
+    --slate3: 197 6.8% 13.6%;
+    --slate4: 198 6.6% 15.8%;
+    --slate5: 199 6.4% 17.9%;
+    --slate6: 201 6.2% 20.5%;
+    --slate7: 203 6.0% 24.3%;
+    --slate8: 207 5.6% 31.6%;
+    --slate9: 206 6.0% 43.9%;
+    --slate10: 206 5.2% 49.5%;
+    --slate11: 206 6.0% 63.0%;
+    --slate12: 210 6.0% 93.0%;
+  }
+
+  * {
+    font-variation-settings: "WONK" 1, "SOFT" 100;
+  }
+
+  body {
+    @apply font-serif text-xl font-light bg-blue-2 text-slate-11;
+  }
+
+  a {
+    @apply text-slate-12 underline-offset-8 decoration-transparent decoration-1 hover:decoration-slate-12 hover:underline-offset-1 underline transition-all duration-200
+  }
+
+  h1 {
+    @apply text-slate-12 text-6xl
+  }
+
+  h2 {
+    @apply text-slate-12 text-3xl
+  }
+}
