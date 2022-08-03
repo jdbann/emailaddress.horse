@@ -1,28 +1,25 @@
 import React from "react";
-import Prose, { Lead } from "./Prose";
 
 type ArticleProps = {
-  as?: string | React.ComponentType<any>;
   title: string | React.ReactElement;
   tagline?: string | React.ReactElement;
 };
 
 const Article: React.FC<ArticleProps> = ({
-  as = "article",
   title,
   tagline,
   children,
 }) => (
-  <Prose as={as} size="xl">
+  <article className="prose prose-slate prose-xl">
     <h1>{title}</h1>
     {tagline && (
-      <Lead>
+      <p className="lead">
         <em>{tagline}</em>
-      </Lead>
+      </p>
     )}
 
     {children}
-  </Prose>
+  </article>
 );
 
 export default Article;
