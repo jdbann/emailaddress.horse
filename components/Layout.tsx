@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React from "react";
-import Article from "./Article";
 
 import * as Nav from "./Nav";
 import Time from "./semantic/Time";
@@ -34,12 +33,16 @@ const Layout: React.FC<LayoutProps> = ({children, title, date, tagline}) => {
           </div>
 
           <main>
-            <Article
-              title={title || "emailaddress.horse"}
-              tagline={parsedDate ? <Time dateTime={parsedDate} /> : tagline}
-            >
+            <article className="prose prose-slate prose-xl">
+              <h1>{title || (<>email<wbr/>address<wbr/>.horse</>)}</h1>
+              {tagline && (
+                <p className="lead">
+                  <em>{parsedDate ? <Time dateTime={parsedDate} /> : tagline}</em>
+                </p>
+              )}
+
               {children}
-            </Article>
+            </article>
           </main>
 
           <footer>
