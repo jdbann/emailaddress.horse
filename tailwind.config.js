@@ -13,7 +13,7 @@ function colorDefinition(type) {
   return Object.fromEntries(
     Array.from(Array(13).keys())
       .slice(1)
-      .map((i) => [i, withOpacityValue(`--color--${type}-${i}`)])
+      .map((i) => [i, withOpacityValue(`--${type}${i}`)])
   )
 }
 
