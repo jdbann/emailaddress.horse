@@ -68,7 +68,7 @@
   }
 
   a {
-    @apply text-slate-12 underline-offset-8 decoration-transparent decoration-1 hover:decoration-slate-12 hover:underline-offset-1 underline transition-all duration-200
+    @apply text-slate-12 underline-offset-8 decoration-transparent decoration-1 hover:decoration-slate-12 hover:underline-offset-1 underline transition-[text-underline-offset,_text-decoration-color] duration-200
   }
 
   h1 {
