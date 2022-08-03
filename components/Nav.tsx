@@ -39,7 +39,7 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
 
   return (
     <NextLink href={href} passHref>
-      <a className="text-slate-11 font-light text-xl tracking-wide leading-normal hover:text-slate-12 [&[data-active='true']]:text-slate-12" data-active={isPathDescendant(href, router.asPath)}>
+      <a className="text-slate-11 font-light text-xl tracking-wide leading-normal hover:text-slate-12 [&[data-active='true']]:text-slate-12 [&[data-active='true']]:decoration-slate-12 [&[data-active='true']]:underline-offset-1" data-active={isPathDescendant(href, router.asPath)}>
         {children}
       </a>
     </NextLink>
