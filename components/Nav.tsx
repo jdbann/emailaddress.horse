@@ -1,8 +1,6 @@
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { styled } from "../stitches.config";
-import Cluster from "./composition/Cluster";
 
 const Root: React.FC<React.HTMLProps<HTMLElement>> = ({
   children,
@@ -10,32 +8,14 @@ const Root: React.FC<React.HTMLProps<HTMLElement>> = ({
 }) => {
   return (
     <nav {...props}>
-      <Cluster asList>{children}</Cluster>
+      <ul className="flex flex-row gap-4" role="list">
+        {React.Children.map(children, (child, index) => {
+          return <li key={index}>{child}</li>;
+        })}
+      </ul>
     </nav>
   );
 };
-
-const StyledRoot = styled(Root, {});
-
-const StyledLink = styled("a", {
-  color: "$slate11",
-  fontWeight: "$light",
-  fontSize: "$xl",
-  letterSpacing: ".025em",
-  lineHeight: "$normal",
-
-  "&:hover": {
-    color: "$slate12",
-  },
-
-  variants: {
-    active: {
-      true: {
-        color: "$slate12",
-      },
-    },
-  },
-});
 
 const isPathDescendant = (
   pathToCheck: string,
@@ -59,9 +39,9 @@ const Link: React.FC<LinkProps> = ({ href, children }) => {
 
   return (
     <NextLink href={href} passHref>
-      <StyledLink active={isPathDescendant(href, router.asPath)}>
+      <a className="text-slate-11 font-light text-xl tracking-wide leading-normal hover:text-slate-12 [&[data-active='true']]:text-slate-12" data-active={isPathDescendant(href, router.asPath)}>
         {children}
-      </StyledLink>
+      </a>
     </NextLink>
   );
 };
