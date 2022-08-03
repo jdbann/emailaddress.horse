@@ -4,6 +4,7 @@ import {ThemeProvider} from "next-themes";
 import Head from "next/head";
 import PlausibleProvider from "next-plausible";
 import Layout from "../components/Layout";
+import "../styles/globals.css"
 
 function MyApp({Component, pageProps}: AppProps) {
   globalStyles();
